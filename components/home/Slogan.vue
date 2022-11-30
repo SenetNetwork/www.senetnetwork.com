@@ -10,7 +10,7 @@
     <img
       ref="blockImg"
       class="block-img"
-      src="@/assets/images/icon-block.png"
+      src="@/assets/images/slogan-block.png"
     />
   </section>
 </template>
@@ -73,20 +73,10 @@ onMounted(() => {
 </script>
 <style scoped>
 .panel {
-  width: 90vw;
-  max-width: 1442px;
+  max-width: var(--max-width);
   margin: 0 auto;
-
-  height: calc(100vh - 45vh);
-  font-weight: 600;
-  font-size: 1.5em;
-  text-align: center;
-  position: relative;
-  box-sizing: border-box;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding-top: 235px;
+  padding-bottom: 109px;
 }
 .slogan {
   font-family: var(--font-space-grotesk);
@@ -98,7 +88,7 @@ onMounted(() => {
   text-transform: uppercase;
 }
 .slogan-desc {
-  margin-top: 64px;
+  font-family: var(--font-work-sans);
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -106,13 +96,44 @@ onMounted(() => {
   text-align: justify;
   letter-spacing: -0.02em;
   max-width: 880px;
+
+  margin-top: 64px;
 }
 .block-img {
   width: 936px;
   position: absolute;
   z-index: -1;
-  top: 82px;
+  top: 138px;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .panel {
+    max-width: 1442px;
+    margin: 0 auto;
+    padding-top: 141px;
+    padding-bottom: 52px;
+  }
+  .slogan {
+    font-size: 44px;
+  }
+  .slogan-desc {
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+
+    margin-top: 35px;
+    padding: 0 20px;
+  }
+  .block-img {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 138px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 </style>
