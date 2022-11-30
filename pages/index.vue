@@ -1,0 +1,4 @@
+<template>
+  <HomeSlogan />
+  <HomePlatform />
+</template>
