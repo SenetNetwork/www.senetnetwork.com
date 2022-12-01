@@ -73,16 +73,21 @@ onMounted(() => {
 </script>
 <style scoped>
 .panel {
+  box-sizing: border-box;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding-top: 235px;
-  padding-bottom: 109px;
+  padding-top: 14.6875rem;
+
+  height: 777px;
+  max-height: 777px;
+  display: flex;
+  flex-direction: column;
 }
 .slogan {
   font-family: var(--font-space-grotesk);
   font-style: normal;
   font-weight: 500;
-  font-size: 110px;
+  font-size: 6.875rem;
   line-height: 120%;
   text-align: center;
   text-transform: uppercase;
@@ -91,19 +96,20 @@ onMounted(() => {
   font-family: var(--font-work-sans);
   font-style: normal;
   font-weight: 500;
-  font-size: 30px;
-  line-height: 35px;
+  font-size: 1.875rem;
+  line-height: 2.1875rem;
   text-align: justify;
   letter-spacing: -0.02em;
-  max-width: 880px;
+  max-width: 55rem;
 
-  margin-top: 64px;
+  margin-top: 4rem;
+  padding-left: 0.625rem;
 }
 .block-img {
-  width: 936px;
+  width: 58.5rem;
   position: absolute;
   z-index: -1;
-  top: 138px;
+  top: 8.625rem;
   left: 50%;
   transform: translate(-50%, 0);
 }
@@ -111,27 +117,29 @@ onMounted(() => {
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .panel {
-    max-width: 1442px;
     margin: 0 auto;
-    padding-top: 141px;
-    padding-bottom: 52px;
+    padding-top: 8.75rem;
+
+    height: 467px;
+    max-height: 467px;
+    box-sizing: border-box;
   }
   .slogan {
-    font-size: 44px;
+    font-size: 2.75rem;
   }
   .slogan-desc {
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 1.0625rem;
+    line-height: 1.25rem;
     text-align: center;
 
-    margin-top: 35px;
-    padding: 0 20px;
+    margin-top: 2.1875rem;
+    padding: 0 1.25rem;
   }
   .block-img {
     width: 100%;
     position: absolute;
     z-index: -1;
-    top: 138px;
+    top: 8.625rem;
     left: 50%;
     transform: translate(-50%, 0);
   }

@@ -45,7 +45,7 @@ onMounted(() => {
 <style scoped>
 .panel {
   width: 100%;
-  height: 1060px;
+  height: 66.25rem;
   position: relative;
 
   color: var(--white);
@@ -60,63 +60,63 @@ onMounted(() => {
 .panel-item.left {
 }
 .topic-wrap {
-  padding-left: 83px;
+  padding-left: 5.125rem;
 }
 .topic {
   font-family: var(--font-work-sans);
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
-  line-height: 26px;
+  font-size: 1.375rem;
+  line-height: 1.625rem;
   letter-spacing: -0.02em;
   text-transform: uppercase;
 
-  padding-top: 108px;
+  padding-top: 6.75rem;
 }
 .topic-desc {
   font-family: var(--font-space-grotesk);
   font-style: normal;
   font-weight: 400;
-  font-size: 100px;
+  font-size: 6.25rem;
   line-height: 120%;
   text-transform: uppercase;
 
-  margin-top: 18px;
-  margin-bottom: 113px;
+  margin-top: 1.125rem;
+  margin-bottom: 7rem;
 }
 .divider-line {
   border-top: 1px solid #d2d2d2;
   position: relative;
 }
 .divider-label {
-  width: 226px;
-  height: 35px;
+  width: 14.125rem;
+  height: 2.1875rem;
   background: #dafd60;
 
   position: absolute;
-  top: -17px;
-  left: -13px;
+  top: -1.0625rem;
+  left: -0.8125rem;
 }
 .intro {
   font-family: var(--font-work-sans);
   font-style: normal;
   font-weight: 400;
-  font-size: 21.3333px;
-  line-height: 31px;
+  font-size: 1.3125rem;
+  line-height: 1.9375rem;
 
-  padding-left: 83px;
-  padding-right: 83px;
-  margin-top: 55px;
+  padding-left: 5.125rem;
+  padding-right: 5.125rem;
+  margin-top: 3.375rem;
 }
 .panel-item.right {
   position: relative;
 }
 .img-phone {
-  width: 845px;
-  height: 1130px;
+  width: 52.75rem;
+  height: 70.625rem;
 
   position: absolute;
-  top: 130px;
+  top: 8.125rem;
   left: 0;
 }
 
@@ -136,30 +136,30 @@ onMounted(() => {
   .panel-item.left {
   }
   .topic-wrap {
-    padding-left: 20px;
+    padding-left: 1.25rem;
   }
   .topic {
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 0.875rem;
+    line-height: 1rem;
 
-    padding-top: 53px;
+    padding-top: 3.25rem;
   }
   .topic-desc {
-    font-size: 40px;
+    font-size: 2.5rem;
 
-    margin-top: 16px;
-    margin-bottom: 55px;
+    margin-top: 1rem;
+    margin-bottom: 3.375rem;
   }
   .divider-label {
-    left: -113px;
+    left: -7rem;
   }
   .intro {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 150%;
 
     padding-left: var(--sm-pl);
     padding-right: var(--sm-pr);
-    margin-top: 55px;
+    margin-top: 3.375rem;
   }
   .panel-item.right {
     position: relative;
@@ -169,9 +169,9 @@ onMounted(() => {
     height: auto;
 
     position: relative;
-    top: 108px;
+    top: 6.75rem;
     left: 0;
-    margin-top: -88px;
+    margin-top: -5.5rem;
   }
 }
 </style>

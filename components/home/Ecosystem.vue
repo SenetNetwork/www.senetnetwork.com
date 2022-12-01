@@ -30,8 +30,8 @@
   background: var(--bg-gradient);
 }
 .topic-wrap {
-  padding-top: 227px;
-  padding-bottom: 21px;
+  padding-top: 14.125rem;
+  padding-bottom: 1.25rem;
 
   position: relative;
 }
@@ -43,8 +43,8 @@
   font-family: var(--font-work-sans);
   font-style: normal;
   font-weight: 500;
-  font-size: 22px;
-  line-height: 26px;
+  font-size: 1.375rem;
+  line-height: 1.625rem;
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
@@ -52,37 +52,37 @@
   font-family: var(--font-space-grotesk);
   font-style: normal;
   font-weight: 500;
-  font-size: 100px;
+  font-size: 6.25rem;
   line-height: 120%;
   text-transform: uppercase;
 
-  margin-top: 4px;
+  margin-top: 0.25rem;
 }
 .topic-animate {
-  width: 513px;
+  width: 32rem;
 
   position: absolute;
-  bottom: -101px;
-  right: -214px;
+  bottom: -6.25rem;
+  right: -13.375rem;
 }
 
 .economic-wrap {
   color: var(--white);
   background-color: var(--black);
-  padding: 76px 112px;
+  padding: 4.75rem 7rem;
 }
 .economic-body {
-  max-width: 1600px;
+  max-width: 100rem;
   margin: 0 auto;
 
   position: relative;
 }
 .economic-desc {
-  width: 712px;
+  width: 44.5rem;
   font-family: var(--font-work-sans);
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 170%;
 
   position: absolute;
@@ -100,8 +100,8 @@
     width: 100%;
   }
   .topic-wrap {
-    padding-top: 180px;
-    padding-bottom: 26px;
+    padding-top: 11.25rem;
+    padding-bottom: 1.625rem;
 
     position: relative;
   }
@@ -110,34 +110,34 @@
     padding-right: var(--sm-pr);
   }
   .topic-title {
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 1.375rem;
+    line-height: 1.625rem;
   }
   .topic-desc {
-    font-size: 40px;
+    font-size: 2.5rem;
     line-height: 120%;
 
-    margin-top: 23px;
+    margin-top: 1.4375rem;
   }
   .topic-animate {
-    width: 256px;
+    width: 16rem;
     position: absolute;
-    top: 50px;
-    right: -146px;
+    top: 3.125rem;
+    right: -9.125rem;
     bottom: initial;
   }
 
   .economic-wrap {
-    padding: 23px 0 37px;
+    padding: 1.375rem 0 2.25rem;
   }
   .economic-body {
-    max-width: 1600px;
+    max-width: 100rem;
     margin: 0 auto;
 
     position: relative;
   }
   .economic-desc {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 150%;
 
     position: static;
@@ -152,7 +152,7 @@
 
     margin-left: auto;
     margin-right: auto;
-    margin-top: 31px;
+    margin-top: 1.875rem;
     display: block;
   }
 }
