@@ -91,7 +91,7 @@
 }
 .economic-animate {
   width: 100%;
-  height: auto;
+  height: calc(0.5625 * 100vw);
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
@@ -147,8 +147,8 @@
     box-sizing: border-box;
   }
   .economic-animate {
-    width: 96%;
-    height: auto;
+    width: 100%;
+    height: calc(0.5625 * 100vw);
 
     margin-left: auto;
     margin-right: auto;

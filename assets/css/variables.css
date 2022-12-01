@@ -7,7 +7,9 @@
   --font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-space-grotesk: 'Space Grotesk';
   --font-work-sans: 'Work Sans';
-  --max-width: 1300px;
+
+  /*必须大于1396，否则Space Grotesk与默认字体换行不一致，导致ScrollTrigger 定位错位*/
+  --max-width: 1396px;
 
   --sm-pl: 68px;
   --sm-pr: 20px;

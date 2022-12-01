@@ -23,6 +23,25 @@
     </div>
   </section>
 </template>
+<script setup>
+// alternatively, you can also use it here
+const { $gsap } = useNuxtApp()
+onMounted(() => {
+  return
+  $gsap.to('.intro', {
+    xPercent: -100 * (2 - 1),
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.intro',
+      start: 'top top',
+      end: 'bottom center',
+      pin: false,
+      markers: true,
+      // base vertical scrolling on how wide the container is so it feels more natural.
+    },
+  })
+})
+</script>
 <style scoped>
 .panel {
   width: 100%;

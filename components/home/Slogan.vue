@@ -14,9 +14,9 @@
     />
   </section>
 </template>
-<script setup lang="ts">
+<script setup>
 // alternatively, you can also use it here
-const { $gsap } = useNuxtApp()
+var { $gsap } = useNuxtApp()
 const panel = ref()
 const blockImg = ref()
 const slogan = ref()
