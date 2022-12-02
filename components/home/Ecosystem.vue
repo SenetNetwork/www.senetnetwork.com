@@ -101,7 +101,7 @@
   }
   .topic-wrap {
     padding-top: 11.25rem;
-    padding-bottom: 1.625rem;
+    padding-bottom: 0;
 
     position: relative;
   }
@@ -118,6 +118,7 @@
     line-height: 120%;
 
     margin-top: 1.4375rem;
+    height: 10.625rem;
   }
   .topic-animate {
     width: 16rem;

@@ -124,7 +124,7 @@ onMounted(() => {
 @media (max-width: 575.98px) {
   .panel {
     width: 100%;
-    height: auto;
+    height: 65rem;
     position: relative;
 
     display: block;
@@ -165,8 +165,11 @@ onMounted(() => {
     position: relative;
   }
   .img-phone {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 35.625rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 
     position: relative;
     top: 6.75rem;
