@@ -1,5 +1,6 @@
 <template>
   <section ref="panel" class="panel">
+    <a name="roadmap"></a>
     <!-- <img class="panel-animate" src="@/assets/images/roadmap-bg.png" /> -->
     <div class="panel-animate"></div>
     <div class="topic-title">Roadmap</div>
@@ -94,7 +95,7 @@ onMounted(() => {
       start: 'top center',
       end: '75% center',
       scrub: 0.3,
-      markers: true,
+      // markers: true,
       onLeave: () => {
         $gsap.set(circle3.value, { backgroundColor: '#24E8D6' })
       },

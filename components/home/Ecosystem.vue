@@ -1,5 +1,7 @@
 <template>
   <div class="panel">
+    <a name="ecosystem"></a>
+
     <div class="topic-wrap">
       <div class="topic-body">
         <div class="topic-title">Ecosystem</div>

@@ -76,6 +76,7 @@ onMounted(() => {
   box-sizing: border-box;
   max-width: var(--max-width);
   margin: 0 auto;
+  margin-top: -91px;
   padding-top: 14.6875rem;
 
   height: 777px;
@@ -119,6 +120,7 @@ onMounted(() => {
   .panel {
     margin: 0 auto;
     padding-top: 8.75rem;
+    margin-top: -70px;
 
     height: 467px;
     max-height: 467px;

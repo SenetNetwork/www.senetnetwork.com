@@ -1,5 +1,7 @@
 <template>
   <section class="panel">
+    <a name="platform"></a>
+
     <div class="panel-item left">
       <div class="topic-wrap">
         <div class="topic">Platform</div>
