@@ -4,4 +4,5 @@
   <HomePlatform />
   <HomeEcosystem />
   <HomeRoadmap />
+  <HomeTeam />
 </template>
