@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="card-wrap">
-        <div class="card-item">
+        <!-- <div class="card-item">
           <div class="card-item-img img1">
             <img src="@/assets/images/roadmap-card1.png" />
           </div>
@@ -43,6 +43,60 @@
             <p>Establish "Game Alliance" (customer and business operations)</p>
             <p>Social platform account operation and traffic management</p>
           </div>
+        </div> -->
+
+        <div ref="cardItem1" class="card-item">
+          <div class="card-item-img img1">
+            <img src="@/assets/images/roadmap-card1.png" />
+          </div>
+          <div class="card-item-title">Phase I</div>
+          <div class="card-item-desc">
+            <p>Launch SENET WaaS</p>
+            <p>Launch SENET Platform Beat Version</p>
+            <p>Launch the "Blue Ocean" program</p>
+            <p>Establish "Game Alliance"</p>
+          </div>
+        </div>
+        <div ref="cardItem2" class="card-item">
+          <div class="card-item-img img2">
+            <img src="@/assets/images/roadmap-card2.png" />
+          </div>
+          <div class="card-item-title">Phase II</div>
+          <div class="card-item-desc">
+            <p>Launch the test network</p>
+            <p>Launch SENET CaaS</p>
+            <p>Launch SENET SDK</p>
+            <p>Launch SENET Adwords</p>
+            <p>Launch SENET IGO Platform</p>
+            <p>Launch SENET GID Card</p>
+          </div>
+        </div>
+
+        <div ref="cardItem3" class="card-item">
+          <div class="card-item-img img1">
+            <img src="@/assets/images/roadmap-card1.png" />
+          </div>
+          <div class="card-item-title">Phase III</div>
+          <div class="card-item-desc">
+            <p>Launch SENET Algorithm System</p>
+            <p>Launch SNLauncher</p>
+            <p>Launch SNMini-Program</p>
+            <p>Launch the "Dream Builder" program</p>
+          </div>
+        </div>
+        <div ref="cardItem4" class="card-item">
+          <div class="card-item-img img2">
+            <img src="@/assets/images/roadmap-card2.png" />
+          </div>
+          <div class="card-item-title">Phase IV</div>
+          <div class="card-item-desc">
+            <p>Access multiple popular games</p>
+            <p>Launch community function</p>
+            <p>Launch AI economic model governance system</p>
+            <p>Launch the main network</p>
+            <p>Launch SENET Token</p>
+            <p>Develope a true Metaverse game library</p>
+          </div>
         </div>
       </div>
     </div>
@@ -56,19 +110,24 @@ const circle1 = ref()
 const circle2 = ref()
 const circle3 = ref()
 const circle4 = ref()
+
+const cardItem1 = ref()
+const cardItem2 = ref()
+const cardItem3 = ref()
+const cardItem4 = ref()
+
 const clientWidth = ref(0)
 onMounted(() => {
   $gsap.to(circle1.value, {
     ease: 'none',
     scrollTrigger: {
-      trigger: '.card-wrap',
+      trigger: cardItem1.value,
       start: 'top center',
-      end: '25% center',
       scrub: 0.3,
-      onLeave: () => {
+      onEnter: () => {
         $gsap.set(circle1.value, { backgroundColor: '#24E8D6' })
       },
-      onEnterBack: () => {
+      onLeaveBack: () => {
         $gsap.set(circle1.value, { backgroundColor: '#fff' })
       },
     }
@@ -76,14 +135,14 @@ onMounted(() => {
   $gsap.to(circle2.value, {
     ease: 'none',
     scrollTrigger: {
-      trigger: '.card-wrap',
-      start: 'top center',
-      end: '50% center',
+      trigger: cardItem2.value,
+      start: '25% center',
       scrub: 0.3,
-      onLeave: () => {
+      // markers: true,
+      onEnter: () => {
         $gsap.set(circle2.value, { backgroundColor: '#24E8D6' })
       },
-      onEnterBack: () => {
+      onLeaveBack: () => {
         $gsap.set(circle2.value, { backgroundColor: '#fff' })
       },
     }
@@ -91,15 +150,13 @@ onMounted(() => {
   $gsap.to(circle3.value, {
     ease: 'none',
     scrollTrigger: {
-      trigger: '.card-wrap',
-      start: 'top center',
-      end: '75% center',
+      trigger: cardItem3.value,
+      start: '50% center',
       scrub: 0.3,
-      // markers: true,
-      onLeave: () => {
+      onEnter: () => {
         $gsap.set(circle3.value, { backgroundColor: '#24E8D6' })
       },
-      onEnterBack: () => {
+      onLeaveBack: () => {
         $gsap.set(circle3.value, { backgroundColor: '#fff' })
       },
     }
@@ -107,14 +164,13 @@ onMounted(() => {
   $gsap.to(circle4.value, {
     ease: 'none',
     scrollTrigger: {
-      trigger: '.card-wrap',
-      start: 'top center',
-      end: '100% center',
+      trigger: cardItem4.value,
+      start: '75% center',
       scrub: 0.3,
-      onLeave: () => {
+      onEnter: () => {
         $gsap.set(circle4.value, { backgroundColor: '#24E8D6' })
       },
-      onEnterBack: () => {
+      onLeaveBack: () => {
         $gsap.set(circle4.value, { backgroundColor: '#fff' })
       }
     }
@@ -128,7 +184,7 @@ onMounted(() => {
       return
     }
     anim = $gsap.to('.card-item', {
-        xPercent: -100 * (2 - 1),
+        xPercent: -200,
         ease: 'none',
         scrollTrigger: {
           trigger: '.card-wrap',
@@ -196,7 +252,6 @@ onMounted(() => {
 .topic-body {
   margin-top: 2.375rem;
 
-  max-width: 114.375rem;
   overflow: hidden;
 }
 
@@ -226,7 +281,7 @@ onMounted(() => {
   border: 1px solid #000000;
 }
 .card-wrap {
-  width: 100vw;
+  width: 5560px;
   margin-top: 4.75rem;
 
   display: flex;
@@ -234,8 +289,8 @@ onMounted(() => {
 
 .card-item {
   border: 1px solid var(--black);
-  width: 71.25rem;
-  height: 33.375rem;
+  width: 1140px;
+  height: 534px;
   padding: 3.125rem;
 
   position: relative;
