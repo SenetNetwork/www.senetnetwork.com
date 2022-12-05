@@ -6,5 +6,4 @@
   <HomeRoadmap />
   <HomeWhyUs />
   <HomeTeam />
-  <div style="height: 1000px;" />
 </template>

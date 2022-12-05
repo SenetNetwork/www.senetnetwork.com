@@ -1,6 +1,6 @@
 <template>
-  <div ref="section" class="section">
-    <div class="topic-wrap">
+  <div class="section">
+    <div ref="section" class="topic-wrap">
       <img class="topic-animate" src="@/assets/images/whyus-animate1.png" />
       <div class="topic-left"></div>
       <div class="topic-right">
@@ -89,18 +89,35 @@ const { $gsap } = useNuxtApp()
 const section = ref()
 
 onMounted(() => {
-
+  // $gsap.to(section.value, {
+  //   scrollTrigger: {
+  //     trigger: section.value,
+  //     start: "top top",
+  //     pin: true,
+  //     markers: true
+  //   }
+  // })
+  // $gsap.utils.toArray(".section .row").forEach((panel, i) => {
+  //   $gsap.to(panel, {
+  //     scrollTrigger: {
+  //       trigger: panel,
+  //       start: "top top",
+  //       pin: true,
+  //       pinSpacing: false,
+  //       markers: true,
+  //     }
+  //   })
+  // })
 })
 </script>
 <style scoped>
 .section {
   background-color: var(--black);
   color: var(--white);
-  padding-top: 60px;
-  padding-bottom: 200px;
 }
 .topic-wrap {
   display: flex;
+  padding-top: 60px;
 
   position: relative;
 }
@@ -177,6 +194,10 @@ onMounted(() => {
   background-color: var(--black);
   color: var(--white);
 }
+
+.row + div {
+  margin-top: 30px;
+}
 .row-item {
 }
 .row-item.left {
@@ -209,10 +230,8 @@ onMounted(() => {
   margin-top: 35px;
 }
 .row-item > img {
-  width: 90%;
-  min-height: 630px;
-  height: 100%;
-  max-width: 1120px;
+  width: calc(0.6667 * 100vw * 0.9);
+  height: calc(0.6667 * 100vw * 0.9 * 0.5625);
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
@@ -284,6 +303,9 @@ onMounted(() => {
   }
   .row {
     display: block;
+  }
+  .row + div {
+    margin-top: 0;
   }
   .row-item {
   }
