@@ -6,4 +6,6 @@
   <HomeRoadmap />
   <HomeWhyUs />
   <HomeTeam />
+  <HomeCommunity />
+  <HomeFooter />
 </template>
