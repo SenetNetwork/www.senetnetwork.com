@@ -5,5 +5,5 @@
   <HomeEcosystem />
   <HomeRoadmap />
   <HomeWhyUs />
-  <HomeFooter />
+  <HomeTeam />
 </template>
