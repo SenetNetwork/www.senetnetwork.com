@@ -4,8 +4,8 @@
       <img class="topic-animate" src="@/assets/images/whyus-animate1.png" />
       <div class="topic-left"></div>
       <div class="topic-right">
-        <div class="topic-title">WHY US</div>
-        <div class="topic-desc">
+        <div ref="topic" class="topic-title">WHY US</div>
+        <div ref="topicDesc" class="topic-desc">
           an authentic decentralized game network with a healthy economic
           system.
         </div>
@@ -88,13 +88,20 @@
 const { $gsap } = useNuxtApp()
 const section = ref()
 
+const topic = ref()
+const topicDesc = ref()
 onMounted(() => {
+  const tl = $gsap.timeline()
+  tl.from(topic.value, {duration: 1.1, y: -50, opacity: 0, ease: "elastic", stagger: 0.06})
+    .addLabel("out", "<0.5")
+    .from(topicDesc.value, {duration: 0.3, opacity: 0, y: 50, ease: "power1.in", stagger: -0.06}, "out")
+
   // $gsap.to(section.value, {
   //   scrollTrigger: {
   //     trigger: section.value,
   //     start: "top top",
-  //     pin: true,
-  //     markers: true
+  //     pin: false,
+  //     markers: false
   //   }
   // })
   // $gsap.utils.toArray(".section .row").forEach((panel, i) => {
