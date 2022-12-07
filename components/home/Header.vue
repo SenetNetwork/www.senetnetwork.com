@@ -61,7 +61,7 @@ function open() {
   justify-content: space-between;
   background-color: rgb(255 255 255 / 60%);
 
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 110;
 }

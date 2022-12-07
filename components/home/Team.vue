@@ -1,15 +1,18 @@
 <template>
-  <div class="team">
+  <div ref="panel" class="team">
+    <a name="about"></a>
     <div class="team-container">
       <div class="team_head">
-        <div class="team_head-sub">WHO WE ARE</div>
-        <div class="team_head-title">TEAM</div>
+        <div ref="topic" class="team_head-sub">WHO WE ARE</div>
+        <div ref="topicDesc" class="team_head-title">TEAM</div>
       </div>
       <div class="team_body">
         <div class="team_list">
           <div :class="itemClass(0)" @click="clickItem(0)">
             <div class="team_item-head">
-              <div class="team_item-avatar"><img src="@/assets/images/default-avatar.png" alt=""></div>
+              <div class="team_item-avatar">
+                <img src="@/assets/images/default-avatar.png" alt="" />
+              </div>
               <div class="team_item-info">
                 <div class="team_item-name">Loki</div>
                 <div class="item_item-label">Founder</div>
@@ -17,22 +20,42 @@
             </div>
             <div class="team_item-body">
               <ul>
-                <li>Have rich experience of GamefI production and distribution from 0 to 1</li>
-                <li>once made and launched a card-based blockchain game in just one week</li>
-                <li>served as consultant in the production plan of FPS games and Metaverse games for the European NFT
-                  project "ALPACADABRAZ"</li>
-                <li>2019 "Huxiang Cup" Network Security Skills Competition Champion</li>
-                <li>4-years experience in network security red-blue confrontation and code auditing</li>
-                <li>Used to be responsible for application security, security operations and other related work in a
-                  large
-                  factory</li>
-                <li>Once in charge of network security penetration and audit of Winter Olympics-related projects</li>
+                <li>
+                  Have rich experience of GamefI production and distribution
+                  from 0 to 1
+                </li>
+                <li>
+                  once made and launched a card-based blockchain game in just
+                  one week
+                </li>
+                <li>
+                  served as consultant in the production plan of FPS games and
+                  Metaverse games for the European NFT project "ALPACADABRAZ"
+                </li>
+                <li>
+                  2019 "Huxiang Cup" Network Security Skills Competition
+                  Champion
+                </li>
+                <li>
+                  4-years experience in network security red-blue confrontation
+                  and code auditing
+                </li>
+                <li>
+                  Used to be responsible for application security, security
+                  operations and other related work in a large factory
+                </li>
+                <li>
+                  Once in charge of network security penetration and audit of
+                  Winter Olympics-related projects
+                </li>
               </ul>
             </div>
           </div>
           <div :class="itemClass(1)" @click="clickItem(1)">
             <div class="team_item-head">
-              <div class="team_item-avatar"><img src="@/assets/images/default-avatar.png" alt=""></div>
+              <div class="team_item-avatar">
+                <img src="@/assets/images/default-avatar.png" alt="" />
+              </div>
               <div class="team_item-info">
                 <div class="team_item-name">Loki</div>
                 <div class="item_item-label">Founder</div>
@@ -40,22 +63,42 @@
             </div>
             <div class="team_item-body">
               <ul>
-                <li>Have rich experience of GamefI production and distribution from 0 to 1</li>
-                <li>once made and launched a card-based blockchain game in just one week</li>
-                <li>served as consultant in the production plan of FPS games and Metaverse games for the European NFT
-                  project "ALPACADABRAZ"</li>
-                <li>2019 "Huxiang Cup" Network Security Skills Competition Champion</li>
-                <li>4-years experience in network security red-blue confrontation and code auditing</li>
-                <li>Used to be responsible for application security, security operations and other related work in a
-                  large
-                  factory</li>
-                <li>Once in charge of network security penetration and audit of Winter Olympics-related projects</li>
+                <li>
+                  Have rich experience of GamefI production and distribution
+                  from 0 to 1
+                </li>
+                <li>
+                  once made and launched a card-based blockchain game in just
+                  one week
+                </li>
+                <li>
+                  served as consultant in the production plan of FPS games and
+                  Metaverse games for the European NFT project "ALPACADABRAZ"
+                </li>
+                <li>
+                  2019 "Huxiang Cup" Network Security Skills Competition
+                  Champion
+                </li>
+                <li>
+                  4-years experience in network security red-blue confrontation
+                  and code auditing
+                </li>
+                <li>
+                  Used to be responsible for application security, security
+                  operations and other related work in a large factory
+                </li>
+                <li>
+                  Once in charge of network security penetration and audit of
+                  Winter Olympics-related projects
+                </li>
               </ul>
             </div>
           </div>
           <div :class="itemClass(2)" @click="clickItem(2)">
             <div class="team_item-head">
-              <div class="team_item-avatar"><img src="@/assets/images/default-avatar.png" alt=""></div>
+              <div class="team_item-avatar">
+                <img src="@/assets/images/default-avatar.png" alt="" />
+              </div>
               <div class="team_item-info">
                 <div class="team_item-name">Loki</div>
                 <div class="item_item-label">Founder</div>
@@ -63,22 +106,42 @@
             </div>
             <div class="team_item-body">
               <ul>
-                <li>Have rich experience of GamefI production and distribution from 0 to 1</li>
-                <li>once made and launched a card-based blockchain game in just one week</li>
-                <li>served as consultant in the production plan of FPS games and Metaverse games for the European NFT
-                  project "ALPACADABRAZ"</li>
-                <li>2019 "Huxiang Cup" Network Security Skills Competition Champion</li>
-                <li>4-years experience in network security red-blue confrontation and code auditing</li>
-                <li>Used to be responsible for application security, security operations and other related work in a
-                  large
-                  factory</li>
-                <li>Once in charge of network security penetration and audit of Winter Olympics-related projects</li>
+                <li>
+                  Have rich experience of GamefI production and distribution
+                  from 0 to 1
+                </li>
+                <li>
+                  once made and launched a card-based blockchain game in just
+                  one week
+                </li>
+                <li>
+                  served as consultant in the production plan of FPS games and
+                  Metaverse games for the European NFT project "ALPACADABRAZ"
+                </li>
+                <li>
+                  2019 "Huxiang Cup" Network Security Skills Competition
+                  Champion
+                </li>
+                <li>
+                  4-years experience in network security red-blue confrontation
+                  and code auditing
+                </li>
+                <li>
+                  Used to be responsible for application security, security
+                  operations and other related work in a large factory
+                </li>
+                <li>
+                  Once in charge of network security penetration and audit of
+                  Winter Olympics-related projects
+                </li>
               </ul>
             </div>
           </div>
           <div :class="itemClass(3)" @click="clickItem(3)">
             <div class="team_item-head">
-              <div class="team_item-avatar"><img src="@/assets/images/default-avatar.png" alt=""></div>
+              <div class="team_item-avatar">
+                <img src="@/assets/images/default-avatar.png" alt="" />
+              </div>
               <div class="team_item-info">
                 <div class="team_item-name">Loki</div>
                 <div class="item_item-label">Founder</div>
@@ -86,22 +149,42 @@
             </div>
             <div class="team_item-body">
               <ul>
-                <li>Have rich experience of GamefI production and distribution from 0 to 1</li>
-                <li>once made and launched a card-based blockchain game in just one week</li>
-                <li>served as consultant in the production plan of FPS games and Metaverse games for the European NFT
-                  project "ALPACADABRAZ"</li>
-                <li>2019 "Huxiang Cup" Network Security Skills Competition Champion</li>
-                <li>4-years experience in network security red-blue confrontation and code auditing</li>
-                <li>Used to be responsible for application security, security operations and other related work in a
-                  large
-                  factory</li>
-                <li>Once in charge of network security penetration and audit of Winter Olympics-related projects</li>
+                <li>
+                  Have rich experience of GamefI production and distribution
+                  from 0 to 1
+                </li>
+                <li>
+                  once made and launched a card-based blockchain game in just
+                  one week
+                </li>
+                <li>
+                  served as consultant in the production plan of FPS games and
+                  Metaverse games for the European NFT project "ALPACADABRAZ"
+                </li>
+                <li>
+                  2019 "Huxiang Cup" Network Security Skills Competition
+                  Champion
+                </li>
+                <li>
+                  4-years experience in network security red-blue confrontation
+                  and code auditing
+                </li>
+                <li>
+                  Used to be responsible for application security, security
+                  operations and other related work in a large factory
+                </li>
+                <li>
+                  Once in charge of network security penetration and audit of
+                  Winter Olympics-related projects
+                </li>
               </ul>
             </div>
           </div>
           <div :class="itemClass(4)" @click="clickItem(4)">
             <div class="team_item-head">
-              <div class="team_item-avatar"><img src="@/assets/images/default-avatar.png" alt=""></div>
+              <div class="team_item-avatar">
+                <img src="@/assets/images/default-avatar.png" alt="" />
+              </div>
               <div class="team_item-info">
                 <div class="team_item-name">Loki</div>
                 <div class="item_item-label">Founder</div>
@@ -109,22 +192,42 @@
             </div>
             <div class="team_item-body">
               <ul>
-                <li>Have rich experience of GamefI production and distribution from 0 to 1</li>
-                <li>once made and launched a card-based blockchain game in just one week</li>
-                <li>served as consultant in the production plan of FPS games and Metaverse games for the European NFT
-                  project "ALPACADABRAZ"</li>
-                <li>2019 "Huxiang Cup" Network Security Skills Competition Champion</li>
-                <li>4-years experience in network security red-blue confrontation and code auditing</li>
-                <li>Used to be responsible for application security, security operations and other related work in a
-                  large
-                  factory</li>
-                <li>Once in charge of network security penetration and audit of Winter Olympics-related projects</li>
+                <li>
+                  Have rich experience of GamefI production and distribution
+                  from 0 to 1
+                </li>
+                <li>
+                  once made and launched a card-based blockchain game in just
+                  one week
+                </li>
+                <li>
+                  served as consultant in the production plan of FPS games and
+                  Metaverse games for the European NFT project "ALPACADABRAZ"
+                </li>
+                <li>
+                  2019 "Huxiang Cup" Network Security Skills Competition
+                  Champion
+                </li>
+                <li>
+                  4-years experience in network security red-blue confrontation
+                  and code auditing
+                </li>
+                <li>
+                  Used to be responsible for application security, security
+                  operations and other related work in a large factory
+                </li>
+                <li>
+                  Once in charge of network security penetration and audit of
+                  Winter Olympics-related projects
+                </li>
               </ul>
             </div>
           </div>
           <div :class="itemClass(5)" @click="clickItem(5)">
             <div class="team_item-head">
-              <div class="team_item-avatar"><img src="@/assets/images/default-avatar.png" alt=""></div>
+              <div class="team_item-avatar">
+                <img src="@/assets/images/default-avatar.png" alt="" />
+              </div>
               <div class="team_item-info">
                 <div class="team_item-name">Loki</div>
                 <div class="item_item-label">Founder</div>
@@ -132,16 +235,34 @@
             </div>
             <div class="team_item-body">
               <ul>
-                <li>Have rich experience of GamefI production and distribution from 0 to 1</li>
-                <li>once made and launched a card-based blockchain game in just one week</li>
-                <li>served as consultant in the production plan of FPS games and Metaverse games for the European NFT
-                  project "ALPACADABRAZ"</li>
-                <li>2019 "Huxiang Cup" Network Security Skills Competition Champion</li>
-                <li>4-years experience in network security red-blue confrontation and code auditing</li>
-                <li>Used to be responsible for application security, security operations and other related work in a
-                  large
-                  factory</li>
-                <li>Once in charge of network security penetration and audit of Winter Olympics-related projects</li>
+                <li>
+                  Have rich experience of GamefI production and distribution
+                  from 0 to 1
+                </li>
+                <li>
+                  once made and launched a card-based blockchain game in just
+                  one week
+                </li>
+                <li>
+                  served as consultant in the production plan of FPS games and
+                  Metaverse games for the European NFT project "ALPACADABRAZ"
+                </li>
+                <li>
+                  2019 "Huxiang Cup" Network Security Skills Competition
+                  Champion
+                </li>
+                <li>
+                  4-years experience in network security red-blue confrontation
+                  and code auditing
+                </li>
+                <li>
+                  Used to be responsible for application security, security
+                  operations and other related work in a large factory
+                </li>
+                <li>
+                  Once in charge of network security penetration and audit of
+                  Winter Olympics-related projects
+                </li>
               </ul>
             </div>
           </div>
@@ -157,9 +278,33 @@ const openIndex = ref(0)
 const itemClass = computed(() => index => `team_item${index === openIndex.value ? ' active' : ''}`)
 const clickItem = index => openIndex.value = index
 
+const panel = ref()
+const topic = ref()
+const topicDesc = ref()
+function textAnimate() {
+  $gsap.from(
+    [topic.value, topicDesc.value],
+    {
+      yPercent: 100,
+      opacity: 0,
+      ease: 'power4.in',
+      scale: 0.9,
+      scrollTrigger: {
+        trigger: panel.value,
+        pin: false, // pin the trigger element while active
+        start: 'top center', // when the top of the trigger hits the top of the viewport
+        end: '+=100px', // end after scrolling 300px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        // markers: true,
+      },
+    })
+}
+
 const { $gsap } = useNuxtApp()
 const clientWidth = ref(0)
 onMounted(() => {
+  textAnimate()
+
   clientWidth.value = window.innerWidth
   let anim
   function initAnimate() {
@@ -189,7 +334,7 @@ onMounted(() => {
         end: 'bottom center',
         pin: false,
         scrub: 1,
-        // markers: true,
+        markers: false,
         // base vertical scrolling on how wide the container is so it feels more natural.
       },
     })
@@ -204,14 +349,15 @@ onMounted(() => {
   if (clientWidth.value > 576) {
     initAnimate()
   }
-  window.onresize = () => {
+  window.addEventListener('resize', () => {
     clientWidth.value = window.innerWidth
+
     if (clientWidth.value > 576) {
       initAnimate()
     } else {
       destroyAnimate()
     }
-  }
+  })
 })
 </script>
 
@@ -232,7 +378,7 @@ onMounted(() => {
 }
 
 .team_head::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -251,7 +397,7 @@ onMounted(() => {
 }
 
 .team_head-sub::before {
-  content: "";
+  content: '';
   width: 14.125rem;
   height: 2.1875rem;
   background: #dafd60;
@@ -304,7 +450,7 @@ onMounted(() => {
   align-items: center;
   width: 15.375rem;
   text-align: center;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .team_item-avatar {
@@ -331,7 +477,7 @@ onMounted(() => {
 .team_item-body {
   flex-shrink: 0;
   opacity: 0;
-  transition: .3s;
+  transition: 0.3s;
   width: 34rem;
   font-size: 1rem;
   font-weight: 300;
@@ -351,17 +497,17 @@ onMounted(() => {
 
 .team_item-body ul::-webkit-scrollbar-thumb {
   border-radius: 6px;
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .team_item-body li {
-  margin: .75rem 0;
+  margin: 0.75rem 0;
   list-style: square;
 }
 
 .team_item.active {
   width: 47.5rem;
-  background-color: #B0F41F;
+  background-color: #b0f41f;
   color: var(--black);
 }
 
@@ -378,6 +524,7 @@ onMounted(() => {
 @media (max-width: 575.98px) {
   .team {
     padding: 4rem 0;
+    padding-top: 0;
   }
   .team_head {
     width: auto;
@@ -387,7 +534,9 @@ onMounted(() => {
     border: none;
     text-align: center;
   }
-  .team_head::before {display: none;}
+  .team_head::before {
+    display: none;
+  }
   .team_head-sub {
     padding: 4.75rem 2rem 1.5rem;
     font-size: 0.875rem;
@@ -419,7 +568,8 @@ onMounted(() => {
   }
   .team_item-head {
     padding: 1.25rem 1.25rem 0;
-    height: auto;width: auto;
+    height: auto;
+    width: auto;
     flex-direction: row;
     justify-content: flex-start;
   }
@@ -432,7 +582,8 @@ onMounted(() => {
     text-align: left;
   }
   .team_item-body {
-    width: auto;height: 0;
+    width: auto;
+    height: 0;
     padding: 0 1.25rem 1.25rem;
   }
   .team_item.active {

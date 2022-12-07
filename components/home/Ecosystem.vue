@@ -1,17 +1,19 @@
 <template>
-  <div class="panel">
+  <div ref="panel" class="panel">
     <a name="ecosystem"></a>
 
     <div class="topic-wrap">
       <div class="topic-body">
-        <div class="topic-title">Ecosystem</div>
-        <div class="topic-desc">A Distribution networ Economic</div>
+        <div ref="topic" class="topic-title">Ecosystem</div>
+        <div ref="topicDesc" class="topic-desc">
+          A Distribution networ Economic
+        </div>
       </div>
       <img class="topic-animate" src="@/assets/images/ecosystem-block.png" />
     </div>
     <div class="economic-wrap">
       <div class="economic-body">
-        <div class="economic-desc">
+        <div ref="intro" class="economic-desc">
           In Senet, games no longer run in isolation. All ecosystem
           participants, platform holders, developers and users, have the
           opportunity to become SENET token holders and share in the value of
@@ -26,10 +28,55 @@
     </div>
   </div>
 </template>
+<script setup>
+// alternatively, you can also use it here
+const { $gsap } = useNuxtApp()
+const panel = ref()
+const topic = ref()
+
+const topicDesc = ref()
+const intro = ref()
+function textAnimate() {
+  $gsap.from(
+    [topic.value, topicDesc.value],
+    {
+      yPercent: 100,
+      opacity: 0,
+      ease: 'power4.in',
+      scale: 0.9,
+      scrollTrigger: {
+        trigger: panel.value,
+        pin: false, // pin the trigger element while active
+        start: 'top 300px', // when the top of the trigger hits the top of the viewport
+        end: '+=100px', // end after scrolling 300px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        markers: false,
+      },
+    })
+  $gsap.from(intro.value, {
+    yPercent: 100, opacity: 0,
+    scrollTrigger: {
+      trigger: panel.value,
+      pin: false, // pin the trigger element while active
+      start: '200px 300px', // when the top of the trigger hits the top of the viewport
+      end: '+=100px', // end after scrolling 300px beyond the start
+      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      markers: false,
+    },
+  })
+}
+
+onMounted(() => {
+  textAnimate()
+})
+</script>
 <style scoped>
 .panel {
   width: 100%;
   background: var(--bg-gradient);
+
+  position: relative;
+  z-index: 1;
 }
 .topic-wrap {
   padding-top: 14.125rem;

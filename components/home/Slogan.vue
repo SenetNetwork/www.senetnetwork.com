@@ -37,13 +37,11 @@ onMounted(() => {
     rotate: -60,
     scale: 0.8,
     ease: 'power1.out',
-  })
-  tl.from(
+  }).from(
     slogan.value,
     { yPercent: 100, opacity: 0, ease: 'power4.in' },
     '<0.5'
-  )
-  tl.from(sloganDesc.value, { yPercent: 100, opacity: 0 }, '<1')
+  ).from(sloganDesc.value, { yPercent: 100, opacity: 0 }, '<1')
 
   $gsap.to([slogan.value, sloganDesc.value], {
     scrollTrigger: {

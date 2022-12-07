@@ -4,7 +4,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: process.env.npm_package_name || '',
+      title: `${process.env.npm_package_name} - ${process.env.npm_package_description}` || '',
       meta: [
         { charset: 'utf-8' },
         {

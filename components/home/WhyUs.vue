@@ -1,6 +1,6 @@
 <template>
-  <div class="section">
-    <div ref="section" class="topic-wrap">
+  <div ref="panel" class="section">
+    <div class="topic-wrap">
       <img class="topic-animate" src="@/assets/images/whyus-animate1.png" />
       <div class="topic-left"></div>
       <div class="topic-right">
@@ -86,41 +86,72 @@
 <script setup>
 // alternatively, you can also use it here
 const { $gsap } = useNuxtApp()
-const section = ref()
+const panel = ref()
 
 const topic = ref()
 const topicDesc = ref()
-onMounted(() => {
-  const tl = $gsap.timeline()
-  tl.from(topic.value, {duration: 1.1, y: -50, opacity: 0, ease: "elastic", stagger: 0.06})
-    .addLabel("out", "<0.5")
-    .from(topicDesc.value, {duration: 0.3, opacity: 0, y: 50, ease: "power1.in", stagger: -0.06}, "out")
+function textAnimate() {
+  $gsap.from(
+    [topic.value, topicDesc.value],
+    {
+      yPercent: 100,
+      opacity: 0,
+      ease: 'power4.in',
+      scale: 0.9,
+      scrollTrigger: {
+        trigger: panel.value,
+        pin: false, // pin the trigger element while active
+        start: 'top center', // when the top of the trigger hits the top of the viewport
+        end: '+=100px', // end after scrolling 300px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        markers: false,
+      },
+    })
+}
 
-  // $gsap.to(section.value, {
-  //   scrollTrigger: {
-  //     trigger: section.value,
-  //     start: "top top",
-  //     pin: false,
-  //     markers: false
-  //   }
-  // })
-  // $gsap.utils.toArray(".section .row").forEach((panel, i) => {
-  //   $gsap.to(panel, {
-  //     scrollTrigger: {
-  //       trigger: panel,
-  //       start: "top top",
-  //       pin: true,
-  //       pinSpacing: false,
-  //       markers: true,
-  //     }
-  //   })
-  // })
+function rowTextAnimate() {
+  $gsap.from(
+    '.row .row-title',
+    {
+      xPercent: -100,
+      opacity: 0,
+      ease: 'power4.in',
+      scale: 0.9,
+      scrollTrigger: {
+        trigger: panel.value,
+        pin: false, // pin the trigger element while active
+        start: 'top top', // when the top of the trigger hits the top of the viewport
+        end: '+=100px', // end after scrolling 300px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        markers: false,
+      },
+    }
+  )
+  $gsap.from('.row .row-desc', {
+    yPercent: 100, opacity: 0,
+    scrollTrigger: {
+      trigger: panel.value,
+      pin: false, // pin the trigger element while active
+      start: 'top top', // when the top of the trigger hits the top of the viewport
+      end: '+=100px', // end after scrolling 300px beyond the start
+      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      markers: false,
+    },
+  })
+}
+
+onMounted(() => {
+  textAnimate()
+  rowTextAnimate()
 })
 </script>
 <style scoped>
 .section {
   background-color: var(--black);
   color: var(--white);
+
+  position: relative;
+  z-index: 1;
 }
 .topic-wrap {
   display: flex;

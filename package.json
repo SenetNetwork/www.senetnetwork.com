@@ -1,4 +1,6 @@
 {
+  "name": "Senet",
+  "description": "The next generation of games",
   "private": true,
   "scripts": {
     "build": "nuxt build",

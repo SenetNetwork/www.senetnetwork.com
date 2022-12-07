@@ -3,7 +3,7 @@
     <a name="roadmap"></a>
     <!-- <img class="panel-animate" src="@/assets/images/roadmap-bg.png" /> -->
     <div class="panel-animate"></div>
-    <div class="topic-title">Roadmap</div>
+    <div ref="topic" class="topic-title">Roadmap</div>
     <div class="topic-body">
       <div class="progress" max="100" value="0">
         <div class="progress-line"></div>
@@ -14,7 +14,7 @@
           <div ref="circle4" class="circle"></div>
         </div>
       </div>
-      <div class="card-wrap">
+      <div ref="cardWrap" class="card-wrap">
         <!-- <div class="card-item">
           <div class="card-item-img img1">
             <img src="@/assets/images/roadmap-card1.png" />
@@ -111,85 +111,125 @@ const circle2 = ref()
 const circle3 = ref()
 const circle4 = ref()
 
+const cardWrap = ref()
 const cardItem1 = ref()
 const cardItem2 = ref()
 const cardItem3 = ref()
 const cardItem4 = ref()
 
 const clientWidth = ref(0)
+
+const topic = ref()
+function textAnimate() {
+  $gsap.from(
+    topic.value,
+    {
+      // duration: 0.5, y: -100, opacity: 0, ease: "elastic",
+      yPercent: -100,
+      opacity: 0,
+      ease: 'power4.in',
+      scale: 0.9,
+      scrollTrigger: {
+        trigger: panel.value,
+        pin: false, // pin the trigger element while active
+        start: '-=100px top', // when the top of the trigger hits the top of the viewport
+        end: '+=50px top', // end after scrolling 300px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        markers: false,
+      },
+    })
+}
+
 onMounted(() => {
-  $gsap.to(circle1.value, {
-    ease: 'none',
-    scrollTrigger: {
-      trigger: cardItem1.value,
-      start: 'top center',
-      scrub: 0.3,
-      onEnter: () => {
-        $gsap.set(circle1.value, { backgroundColor: '#24E8D6' })
-      },
-      onLeaveBack: () => {
-        $gsap.set(circle1.value, { backgroundColor: '#fff' })
-      },
-    }
-  });
-  $gsap.to(circle2.value, {
-    ease: 'none',
-    scrollTrigger: {
-      trigger: cardItem2.value,
-      start: '25% center',
-      scrub: 0.3,
-      // markers: true,
-      onEnter: () => {
-        $gsap.set(circle2.value, { backgroundColor: '#24E8D6' })
-      },
-      onLeaveBack: () => {
-        $gsap.set(circle2.value, { backgroundColor: '#fff' })
-      },
-    }
-  });
-  $gsap.to(circle3.value, {
-    ease: 'none',
-    scrollTrigger: {
-      trigger: cardItem3.value,
-      start: '50% center',
-      scrub: 0.3,
-      onEnter: () => {
-        $gsap.set(circle3.value, { backgroundColor: '#24E8D6' })
-      },
-      onLeaveBack: () => {
-        $gsap.set(circle3.value, { backgroundColor: '#fff' })
-      },
-    }
-  });
-  $gsap.to(circle4.value, {
-    ease: 'none',
-    scrollTrigger: {
-      trigger: cardItem4.value,
-      start: '75% center',
-      scrub: 0.3,
-      onEnter: () => {
-        $gsap.set(circle4.value, { backgroundColor: '#24E8D6' })
-      },
-      onLeaveBack: () => {
-        $gsap.set(circle4.value, { backgroundColor: '#fff' })
-      }
-    }
-  });
-
-
+  textAnimate()
   clientWidth.value = window.innerWidth
   let anim
   function initAnimate() {
+
+    const offectWidth = cardWrap.value.clientWidth - cardWrap.value.clientWidth/4 - window.innerWidth + cardWrap.value.offsetLeft
+    const height = cardWrap.value.clientHeight + offectWidth
+    if (offectWidth < 0) return false
+
     if (anim) {
       return
     }
-    anim = $gsap.to('.card-item', {
-        xPercent: -200,
+
+    $gsap.to(circle1.value, {
+      ease: 'none',
+      scrollTrigger: {
+        trigger: panel.value,
+        start: `+=${height * 0.25}px top`,
+        scrub: 0.3,
+        onEnter: () => {
+          $gsap.set(circle1.value, { backgroundColor: '#24E8D6' })
+        },
+        onLeaveBack: () => {
+          $gsap.set(circle1.value, { backgroundColor: '#fff' })
+        },
+      }
+    });
+    $gsap.to(circle2.value, {
+      ease: 'none',
+      scrollTrigger: {
+        trigger: panel.value,
+        start: `+=${height * 0.5}px top`,
+        scrub: 0.3,
+        // markers: true,
+        onEnter: () => {
+          $gsap.set(circle2.value, { backgroundColor: '#24E8D6' })
+        },
+        onLeaveBack: () => {
+          $gsap.set(circle2.value, { backgroundColor: '#fff' })
+        },
+      }
+    });
+    $gsap.to(circle3.value, {
+      ease: 'none',
+      scrollTrigger: {
+        trigger: panel.value,
+        start: `+=${height * 0.75}px top`,
+        scrub: 0.3,
+        onEnter: () => {
+          $gsap.set(circle3.value, { backgroundColor: '#24E8D6' })
+        },
+        onLeaveBack: () => {
+          $gsap.set(circle3.value, { backgroundColor: '#fff' })
+        },
+      }
+    });
+    $gsap.to(circle4.value, {
+      ease: 'none',
+      scrollTrigger: {
+        trigger: panel.value,
+        start: `+=${height * 0.9}px top`,
+        scrub: 0.3,
+        onEnter: () => {
+          $gsap.set(circle4.value, { backgroundColor: '#24E8D6' })
+        },
+        onLeaveBack: () => {
+          $gsap.set(circle4.value, { backgroundColor: '#fff' })
+        }
+      }
+    });
+
+    $gsap.to(panel.value, {
+        scrollTrigger: {
+          trigger: panel.value,
+          start: `top top`,
+          end: `+=${height}px top`,
+          pin: true,
+          scrub: 1,
+          // markers: true,
+          // base vertical scrolling on how wide the container is so it feels more natural.
+        },
+    })
+    anim = $gsap.to(cardWrap.value, {
+        x: - offectWidth,
         ease: 'none',
         scrollTrigger: {
-          trigger: '.card-wrap',
-          start: 'top center',
-          end: 'bottom center',
+          trigger: panel.value,
+          start: 'top top',
+          end: `+=${height}px top`,
           pin: false,
           scrub: 1,
           // markers: true,
@@ -207,15 +247,15 @@ onMounted(() => {
   if (clientWidth.value > 576) {
     initAnimate()
   }
-  window.onresize = () => {
+
+  window.addEventListener('resize', () => {
     clientWidth.value = window.innerWidth
     if (clientWidth.value > 576) {
       initAnimate()
     } else {
       destroyAnimate()
     }
-  }
-
+  })
 })
 </script>
 <style scoped>
@@ -284,6 +324,7 @@ onMounted(() => {
   width: 5560px;
   margin-top: 4.75rem;
 
+  flex-shrink: 0;
   display: flex;
 }
 
@@ -371,6 +412,7 @@ onMounted(() => {
 
     position: relative;
     margin: 0 0.625rem;
+    display: none;
   }
   .progress-line {
     border-left: 1px solid #d2d2d2;

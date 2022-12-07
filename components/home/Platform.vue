@@ -1,15 +1,17 @@
 <template>
-  <section class="panel">
+  <section ref="panel" class="panel">
     <a name="platform"></a>
     <div class="panel-item left">
       <div class="topic-wrap">
-        <div class="topic">Platform</div>
-        <div class="topic-desc">Platform for play ... Earn ...</div>
+        <div ref="topic" class="topic">Platform</div>
+        <div ref="topicDesc" class="topic-desc">
+          Platform for play ... Earn ...
+        </div>
       </div>
       <div class="divider-line">
         <div class="divider-label"></div>
       </div>
-      <div class="intro">
+      <div ref="intro" class="intro">
         SN not just focuses on the value of game experience, but also embeds an
         economic system that connects with reality. By integrating equipment,
         securitization, game token mechanism securitization, security audit,
@@ -20,24 +22,63 @@
       </div>
     </div>
     <div class="panel-item right">
-      <img class="img-phone" src="@/assets/images/platform.png" />
+      <img ref="phone" class="img-phone" src="@/assets/images/platform.png" />
     </div>
   </section>
 </template>
 <script setup>
 // alternatively, you can also use it here
 const { $gsap } = useNuxtApp()
+const panel = ref()
+const topic = ref()
+const phone = ref()
+
+const topicDesc = ref()
+const intro = ref()
+function textAnimate() {
+  $gsap.from(
+    [topic.value, topicDesc.value],
+    {
+      xPercent: -100,
+      opacity: 0,
+      ease: 'power4.in',
+      scale: 0.9,
+      scrollTrigger: {
+        trigger: panel.value,
+        pin: false, // pin the trigger element while active
+        start: 'top 300px', // when the top of the trigger hits the top of the viewport
+        end: '+=100px', // end after scrolling 300px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        markers: false,
+      },
+    }
+  )
+  $gsap.from(intro.value, {
+    yPercent: 100, opacity: 0,
+    scrollTrigger: {
+      trigger: panel.value,
+      pin: false, // pin the trigger element while active
+      start: 'top 300px', // when the top of the trigger hits the top of the viewport
+      end: '+=100px', // end after scrolling 300px beyond the start
+      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      markers: false,
+    },
+  })
+}
+
 onMounted(() => {
-  return
-  $gsap.to('.intro', {
-    xPercent: -100 * (2 - 1),
+  textAnimate()
+  $gsap.from(phone.value, {
+    xPercent: 5,
+    transform: 'rotateX(5deg) rotateY(-20deg) rotateZ(0)',
     ease: 'none',
     scrollTrigger: {
-      trigger: '.intro',
-      start: 'top top',
-      end: 'bottom center',
+      trigger: phone.value,
+      start: 'top center',
+      end: 'bottom bottom',
       pin: false,
-      markers: true,
+      scrub: 1,
+      markers: false,
       // base vertical scrolling on how wide the container is so it feels more natural.
     },
   })
@@ -53,6 +94,7 @@ onMounted(() => {
   background: var(--black);
 
   display: flex;
+  z-index: 2;
 }
 .panel-item {
   flex: 1;

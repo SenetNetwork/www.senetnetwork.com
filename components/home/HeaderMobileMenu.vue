@@ -22,45 +22,45 @@
         <ul class="header_menu-nav">
           <li>
             <div class="header_menu-btn-wrap">
-              <a href="#"
-                ><span data-name="WEMIX3.0">Home</span
-                ><span class="a11y" aria-hidden="false">Home</span></a
-              >
+              <a href="#" @click="close">
+                <span>Home</span
+                ><span class="a11y" aria-hidden="false">Home</span>
+              </a>
             </div>
           </li>
           <li>
             <div class="header_menu-btn-wrap">
-              <a href="/en/platforms"
-                ><span data-name="Platforms">Platform</span
-                ><span class="a11y" aria-hidden="false">Platform</span></a
-              >
+              <a href="#platform" @click="close">
+                <span>Platform</span
+                ><span class="a11y" aria-hidden="false">Platform</span>
+              </a>
             </div>
           </li>
           <li>
             <div class="header_menu-btn-wrap">
-              <a href="/en/community"
-                ><span data-name="Community">Ecosystem</span
-                ><span class="a11y" aria-hidden="false">Ecosystem</span></a
-              >
+              <a href="#ecosystem" @click="close">
+                <span>Ecosystem</span
+                ><span class="a11y" aria-hidden="false">Ecosystem</span>
+              </a>
             </div>
           </li>
           <li>
             <div class="header_menu-btn-wrap">
-              <a href="/en/developers"
-                ><span data-name="Developers">Roadmap</span
-                ><span class="a11y" aria-hidden="false">Roadmap</span></a
-              >
+              <a href="#roadmap" @click="close">
+                <span data-name="Developers">Roadmap</span
+                ><span class="a11y" aria-hidden="false">Roadmap</span>
+              </a>
             </div>
           </li>
           <li>
             <div class="header_menu-btn-wrap">
-              <a href="/en/wallet"
-                ><span>About</span
-                ><span class="a11y" aria-hidden="false">About</span></a
-              >
+              <a href="#about" @click="close">
+                <span>About</span
+                ><span class="a11y" aria-hidden="false">About</span>
+              </a>
             </div>
           </li>
-          <li class="li_btn first">
+          <!-- <li class="li_btn first">
             <div class="header_menu-btn-wrap">
               <a
                 href="/download/xxx_Whitepaper.pdf"
@@ -114,7 +114,7 @@
                 </svg>
               </a>
             </div>
-          </li>
+          </li> -->
         </ul>
       </nav>
     </div>
