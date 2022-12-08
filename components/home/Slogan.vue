@@ -23,14 +23,14 @@ const slogan = ref()
 const sloganDesc = ref()
 
 onMounted(() => {
-  $gsap.to(panel.value, {
-    scrollTrigger: {
-      trigger: panel.value,
-      start: 'top top',
-      pin: true,
-      pinSpacing: false,
-    },
-  })
+  // $gsap.to(panel.value, {
+  //   scrollTrigger: {
+  //     trigger: panel.value,
+  //     start: 'top top',
+  //     pin: false,
+  //     pinSpacing: false,
+  //   },
+  // })
   const tl = $gsap.timeline()
   tl.from(blockImg.value, {
     duration: 2.5,
@@ -45,10 +45,10 @@ onMounted(() => {
 
   $gsap.to([slogan.value, sloganDesc.value], {
     scrollTrigger: {
-      trigger: [slogan.value, sloganDesc.value],
+      trigger: panel.value,
       pin: false, // pin the trigger element while active
       start: 'center center', // when the top of the trigger hits the top of the viewport
-      end: '+=300', // end after scrolling 300px beyond the start
+      end: '100% center', // end after scrolling 300px beyond the start
       scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
       // markers: true,
     },
@@ -57,10 +57,11 @@ onMounted(() => {
 
   $gsap.to(blockImg.value, {
     scrollTrigger: {
-      trigger: blockImg.value,
-      pin: false, // pin the trigger element while active
-      start: 'center 50', // when the top of the trigger hits the top of the viewport
-      end: '+=500', // end after scrolling 500px beyond the start
+      trigger: panel.value,
+      pin: true, // pin the trigger element while active
+      pinSpacing: false,
+      start: 'top top', // when the top of the trigger hits the top of the viewport
+      end: 'bottom', // end after scrolling 500px beyond the start
       scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
       // markers: true,
     },
@@ -74,13 +75,12 @@ onMounted(() => {
   box-sizing: border-box;
   max-width: var(--max-width);
   margin: 0 auto;
-  margin-top: -91px;
-  padding-top: 14.6875rem;
+  padding-top: 5.625rem;
 
-  height: 777px;
-  max-height: 777px;
+  height: 80vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .slogan {
   font-family: var(--font-space-grotesk);
@@ -108,7 +108,7 @@ onMounted(() => {
   width: 58.5rem;
   position: absolute;
   z-index: -1;
-  top: 8.625rem;
+  top: 6.75rem;
   left: 50%;
   transform: translate(-50%, 0);
 }
@@ -118,10 +118,8 @@ onMounted(() => {
   .panel {
     margin: 0 auto;
     padding-top: 8.75rem;
-    margin-top: -70px;
 
-    height: 467px;
-    max-height: 467px;
+    height: 90vh;
     box-sizing: border-box;
   }
   .slogan {

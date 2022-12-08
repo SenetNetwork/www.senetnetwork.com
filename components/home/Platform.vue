@@ -4,11 +4,9 @@
     <div class="panel-item left">
       <div class="topic-wrap">
         <div ref="topic" class="topic">Platform</div>
-        <div ref="topicDesc" class="topic-desc">
-          Platform for play ... Earn ...
-        </div>
+        <div ref="topicDesc" class="topic-desc">PLAY FOR FUN TO EARN</div>
       </div>
-      <div class="divider-line">
+      <div ref="divider" class="divider-line">
         <div class="divider-label"></div>
       </div>
       <div ref="intro" class="intro">
@@ -34,51 +32,50 @@ const topic = ref()
 const phone = ref()
 
 const topicDesc = ref()
+const divider = ref()
 const intro = ref()
 function textAnimate() {
+  $gsap.from(topic.value, {
+    yPercent: 30,
+    opacity: 0,
+    ease: 'power4.in',
+    scale: 0.9,
+    stagger: 0.5,
+  })
   $gsap.from(
-    [topic.value, topicDesc.value],
+    [topicDesc.value, divider.value, intro.value],
     {
-      xPercent: -100,
+      yPercent: 30,
       opacity: 0,
       ease: 'power4.in',
       scale: 0.9,
+      stagger: 0.5,
       scrollTrigger: {
         trigger: panel.value,
         pin: false, // pin the trigger element while active
-        start: 'top 300px', // when the top of the trigger hits the top of the viewport
-        end: '+=100px', // end after scrolling 300px beyond the start
+        start: 'top 80%', // when the top of the trigger hits the top of the viewport
+        end: '50% 80%', // end after scrolling 300px beyond the start
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         markers: false,
       },
     }
   )
-  $gsap.from(intro.value, {
-    yPercent: 100, opacity: 0,
-    scrollTrigger: {
-      trigger: panel.value,
-      pin: false, // pin the trigger element while active
-      start: 'top 300px', // when the top of the trigger hits the top of the viewport
-      end: '+=100px', // end after scrolling 300px beyond the start
-      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-      markers: false,
-    },
-  })
 }
 
 onMounted(() => {
   textAnimate()
   $gsap.from(phone.value, {
     xPercent: 5,
-    transform: 'rotateX(5deg) rotateY(-20deg) rotateZ(0)',
+    transform: 'rotateX(5deg) rotateY(5deg) rotateZ(5deg)',
+    scale: 0.95,
     ease: 'none',
     scrollTrigger: {
-      trigger: phone.value,
-      start: 'top center',
-      end: 'bottom bottom',
+      trigger: panel.value,
+      start: 'top 80%',
+      end: '50% 80%',
       pin: false,
       scrub: 1,
-      markers: false,
+      // markers: true,
       // base vertical scrolling on how wide the container is so it feels more natural.
     },
   })
@@ -185,7 +182,7 @@ onMounted(() => {
     font-size: 0.875rem;
     line-height: 1rem;
 
-    padding-top: 3.25rem;
+    padding-top: 1.25rem;
   }
   .topic-desc {
     font-size: 2.5rem;
