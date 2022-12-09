@@ -15,41 +15,11 @@
         </div>
       </div>
       <div ref="cardWrap" class="card-wrap">
-        <!-- <div class="card-item">
-          <div class="card-item-img img1">
-            <img src="@/assets/images/roadmap-card1.png" />
-          </div>
-          <div class="card-item-title">preparation stage</div>
-          <div class="card-item-desc">
-            <p>Test Network (internal test)</p>
-            <p>SENET WALLET (internal test) Gaming</p>
-            <p>Platform (internal test)</p>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="card-item-img img2">
-            <img src="@/assets/images/roadmap-card2.png" />
-          </div>
-          <div class="card-item-title">Test Phrase</div>
-          <div class="card-item-desc">
-            <p>Development resources are in place</p>
-            <p>Develop Senet public chain test network nodes</p>
-            <p>Launch Senet Wallet</p>
-            <p>Launch SENET game platform</p>
-            <p>Launch SENET game store</p>
-            <p>Launch the Defi platform for game item trading</p>
-            <p>Launch an ad network</p>
-            <p>Launch big data analysis and algorithm systems</p>
-            <p>Establish "Game Alliance" (customer and business operations)</p>
-            <p>Social platform account operation and traffic management</p>
-          </div>
-        </div> -->
-
         <div ref="cardItem1" class="card-item">
           <div class="card-item-img img1">
-            <img src="@/assets/images/roadmap-card1.png" />
+            <img src="@/assets/images/roadmap-card1.gif" />
           </div>
-          <div class="card-item-title">Phase I</div>
+          <div class="card-item-title">preparation stage</div>
           <div class="card-item-desc">
             <p>Launch SENET WaaS</p>
             <p>Launch SENET Platform Beat Version</p>
@@ -59,9 +29,9 @@
         </div>
         <div ref="cardItem2" class="card-item">
           <div class="card-item-img img2">
-            <img src="@/assets/images/roadmap-card2.png" />
+            <img src="@/assets/images/roadmap-card2.gif" />
           </div>
-          <div class="card-item-title">Phase II</div>
+          <div class="card-item-title">Test Phrase</div>
           <div class="card-item-desc">
             <p>Launch the test network</p>
             <p>Launch SENET CaaS</p>
@@ -74,9 +44,9 @@
 
         <div ref="cardItem3" class="card-item">
           <div class="card-item-img img1">
-            <img src="@/assets/images/roadmap-card1.png" />
+            <img src="@/assets/images/roadmap-card3.gif" />
           </div>
-          <div class="card-item-title">Phase III</div>
+          <div class="card-item-title">Incubation Stage</div>
           <div class="card-item-desc">
             <p>Launch SENET Algorithm System</p>
             <p>Launch SNLauncher</p>
@@ -86,9 +56,9 @@
         </div>
         <div ref="cardItem4" class="card-item">
           <div class="card-item-img img2">
-            <img src="@/assets/images/roadmap-card2.png" />
+            <img src="@/assets/images/roadmap-card4.gif" />
           </div>
-          <div class="card-item-title">Phase IV</div>
+          <div class="card-item-title">Profit stage</div>
           <div class="card-item-desc">
             <p>Access multiple popular games</p>
             <p>Launch community function</p>
@@ -104,7 +74,7 @@
 </template>
 <script setup>
 // alternatively, you can also use it here
-const { $gsap } = useNuxtApp()
+const { $gsap, $ScrollTrigger } = useNuxtApp()
 const panel = ref()
 const circle1 = ref()
 const circle2 = ref()
@@ -124,16 +94,15 @@ function textAnimate() {
   $gsap.from(
     topic.value,
     {
-      // duration: 0.5, y: -100, opacity: 0, ease: "elastic",
-      yPercent: -100,
+      yPercent: 30,
       opacity: 0,
       ease: 'power4.in',
       scale: 0.9,
       scrollTrigger: {
         trigger: panel.value,
         pin: false, // pin the trigger element while active
-        start: '-=100px top', // when the top of the trigger hits the top of the viewport
-        end: '+=50px top', // end after scrolling 300px beyond the start
+        start: 'top 80%', // when the top of the trigger hits the top of the viewport
+        end: '+=80px 80%', // end after scrolling 300px beyond the start
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         markers: false,
       },
@@ -142,24 +111,21 @@ function textAnimate() {
 
 onMounted(() => {
   textAnimate()
+
   clientWidth.value = window.innerWidth
   let anim
   function initAnimate() {
-
-    const offectWidth = cardWrap.value.clientWidth - cardWrap.value.clientWidth/4 - window.innerWidth + cardWrap.value.offsetLeft
+    const offectWidth = cardWrap.value.clientWidth - window.innerWidth + cardWrap.value.offsetLeft * 2
     const height = cardWrap.value.clientHeight + offectWidth
     if (offectWidth < 0) return false
-
-    if (anim) {
-      return
-    }
 
     $gsap.to(circle1.value, {
       ease: 'none',
       scrollTrigger: {
         trigger: panel.value,
-        start: `+=${height * 0.25}px top`,
+        start: `0 top`,
         scrub: 0.3,
+        // markers: true,
         onEnter: () => {
           $gsap.set(circle1.value, { backgroundColor: '#24E8D6' })
         },
@@ -172,9 +138,9 @@ onMounted(() => {
       ease: 'none',
       scrollTrigger: {
         trigger: panel.value,
-        start: `+=${height * 0.5}px top`,
+        start: `+=${height * 0.25}px top`,
         scrub: 0.3,
-        // markers: true,
+        markers: false,
         onEnter: () => {
           $gsap.set(circle2.value, { backgroundColor: '#24E8D6' })
         },
@@ -187,7 +153,7 @@ onMounted(() => {
       ease: 'none',
       scrollTrigger: {
         trigger: panel.value,
-        start: `+=${height * 0.75}px top`,
+        start: `+=${height * 0.5}px top`,
         scrub: 0.3,
         onEnter: () => {
           $gsap.set(circle3.value, { backgroundColor: '#24E8D6' })
@@ -201,7 +167,7 @@ onMounted(() => {
       ease: 'none',
       scrollTrigger: {
         trigger: panel.value,
-        start: `+=${height * 0.9}px top`,
+        start: `+=${height * 0.75}px top`,
         scrub: 0.3,
         onEnter: () => {
           $gsap.set(circle4.value, { backgroundColor: '#24E8D6' })
@@ -212,17 +178,6 @@ onMounted(() => {
       }
     });
 
-    $gsap.to(panel.value, {
-        scrollTrigger: {
-          trigger: panel.value,
-          start: `top top`,
-          end: `+=${height}px top`,
-          pin: true,
-          scrub: 1,
-          // markers: true,
-          // base vertical scrolling on how wide the container is so it feels more natural.
-        },
-    })
     anim = $gsap.to(cardWrap.value, {
         x: - offectWidth,
         ease: 'none',
@@ -230,39 +185,25 @@ onMounted(() => {
           trigger: panel.value,
           start: 'top top',
           end: `+=${height}px top`,
-          pin: false,
+          pin: true,
           scrub: 1,
-          // markers: true,
+          markers: false,
           // base vertical scrolling on how wide the container is so it feels more natural.
         },
       })
   }
-  function destroyAnimate() {
-    if (anim) {
-      anim.progress(0)
-      anim.kill()
-    }
-    anim = null
-  }
-  if (clientWidth.value > 576) {
-    initAnimate()
-  }
-
-  window.addEventListener('resize', () => {
-    clientWidth.value = window.innerWidth
-    if (clientWidth.value > 576) {
+  $ScrollTrigger.matchMedia({
+    "(min-width: 576px)": function() {
       initAnimate()
-    } else {
-      destroyAnimate()
     }
   })
 })
 </script>
 <style scoped>
 .panel {
-  padding-top: 10.25rem;
+  padding-top: 6rem;
   padding-left: 6.25rem;
-  padding-bottom: 7.875rem;
+  padding-bottom: 4rem;
   position: relative;
 }
 .panel-animate {
@@ -321,7 +262,7 @@ onMounted(() => {
   border: 1px solid #000000;
 }
 .card-wrap {
-  width: 5560px;
+  width: 4560px;
   margin-top: 4.75rem;
 
   flex-shrink: 0;
@@ -337,24 +278,24 @@ onMounted(() => {
   position: relative;
 }
 .card-item-img {
+  width: 26.25rem;
+  height: 23.125rem;
+
   z-index: -1;
 }
 .card-item-img.img1 {
-  width: 26.25rem;
-
   position: absolute;
-  bottom: 3.125rem;
+  bottom: 0;
   right: 14rem;
 }
 .card-item-img.img2 {
-  width: 22.5rem;
   position: absolute;
-  bottom: 6.125rem;
+  bottom: 0;
   right: 12.5rem;
 }
 .card-item-img img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .card-item-title {
   font-family: var(--font-work-sans);
@@ -380,9 +321,9 @@ onMounted(() => {
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .panel {
-    padding-top: 5.125rem;
+    padding-top: 3rem;
     padding-left: 0;
-    padding-bottom: 5.375rem;
+    padding-bottom: 3rem;
     position: relative;
   }
   .panel-animate {
@@ -440,6 +381,7 @@ onMounted(() => {
     width: auto;
     margin-top: 0;
     padding: 0 0.625rem;
+    padding-bottom: 0.9375rem;
 
     display: block;
     flex: 1;
@@ -449,40 +391,48 @@ onMounted(() => {
     border: 1px solid var(--black);
     width: 100%;
     height: auto;
-    padding: 0.9375rem 1.125rem;
+    padding: 0;
 
     position: relative;
+    padding-top: 0.25rem;
+    padding-bottom: 2rem;
   }
   .card-item + div {
     margin-top: 2.375rem;
   }
+  .card-item-img {
+    width: 90vw;
+    height: calc(0.8828 * 90vw);
+  }
   .card-item-img.img1 {
-    width: 100%;
-    height: 14.5rem;
+    width: 90vw;
+    height: calc(0.8828 * 90vw);
     margin: 0 auto;
 
     position: static;
   }
   .card-item-img.img2 {
-    width: 80%;
-    height: 10.5rem;
+    width: 90vw;
+    height: calc(0.8828 * 90vw);
     margin: 0 auto;
 
     position: static;
   }
   .card-item-img img {
     width: 100%;
-    height: auto;
+    height: 100%;
   }
   .card-item-title {
-    margin-top: 2rem;
     font-size: 1.875rem;
+
+    padding: 0 1.125rem;
 
     position: static;
   }
   .card-item-desc {
     font-size: 0.9375rem;
 
+    padding: 0 1.125rem;
     margin-top: 0.9375rem;
   }
 }

@@ -10,17 +10,17 @@
         <div class="divider-label"></div>
       </div>
       <div ref="intro" class="intro">
-        SN not just focuses on the value of game experience, but also embeds an
-        economic system that connects with reality. By integrating equipment,
+        SNET not just focuses on the value of game experience, but also embeds
+        an economic system that connects with reality. By integrating equipment,
         securitization, game token mechanism securitization, security audit,
-        native cloud security defense,, advertising services, game asset
+        native cloud security defense, advertising services, game asset
         management, AI economic model governance, big data user behavior
         analysis, recommendation network and other functions, we aim to help
-        user more safely and conveniently enter the WEB3 World.
+        user more safely and conveniently enter the Web3.0 World.
       </div>
     </div>
     <div class="panel-item right">
-      <img ref="phone" class="img-phone" src="@/assets/images/platform.png" />
+      <img ref="phone" class="img-phone" src="@/assets/images/platform.gif" />
     </div>
   </section>
 </template>
@@ -40,7 +40,6 @@ function textAnimate() {
     opacity: 0,
     ease: 'power4.in',
     scale: 0.9,
-    stagger: 0.5,
   })
   $gsap.from(
     [topicDesc.value, divider.value, intro.value],
@@ -54,9 +53,9 @@ function textAnimate() {
         trigger: panel.value,
         pin: false, // pin the trigger element while active
         start: 'top 80%', // when the top of the trigger hits the top of the viewport
-        end: '50% 80%', // end after scrolling 300px beyond the start
+        end: '30% 80%', // end after scrolling 300px beyond the start
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        markers: false,
+        // markers: true,
       },
     }
   )
@@ -66,7 +65,6 @@ onMounted(() => {
   textAnimate()
   $gsap.from(phone.value, {
     xPercent: 5,
-    transform: 'rotateX(5deg) rotateY(5deg) rotateZ(5deg)',
     scale: 0.95,
     ease: 'none',
     scrollTrigger: {
@@ -143,6 +141,7 @@ onMounted(() => {
   font-weight: 400;
   font-size: 1.3125rem;
   line-height: 1.9375rem;
+  text-align: justify;
 
   padding-left: 5.125rem;
   padding-right: 5.125rem;

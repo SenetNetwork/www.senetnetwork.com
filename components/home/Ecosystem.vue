@@ -12,17 +12,17 @@
       <img class="topic-animate" src="@/assets/images/ecosystem-block.png" />
     </div>
     <div class="economic-wrap">
+      <div ref="intro" class="economic-desc">
+        In Senet, games no longer run in isolation. All ecosystem participants,
+        platform holders, developers and users, have the opportunity to become
+        SENET token holders and share in the value of it. The continuous
+        interaction and common interests among users will promote the further
+        development of the ecosystem.
+      </div>
       <div class="economic-body">
-        <div ref="intro" class="economic-desc">
-          In Senet, games no longer run in isolation. All ecosystem
-          participants, platform holders, developers and users, have the
-          opportunity to become SENET token holders and share in the value of
-          it. The continuous interaction and common interests among users will
-          promote the further development of the ecosystem
-        </div>
         <img
           class="economic-animate"
-          src="@/assets/images/ecosystem-economic.png"
+          src="@/assets/images/ecosystem-economic.gif"
         />
       </div>
     </div>
@@ -33,37 +33,43 @@
 const { $gsap } = useNuxtApp()
 const panel = ref()
 const topic = ref()
-
 const topicDesc = ref()
+
 const intro = ref()
 function textAnimate() {
   $gsap.from(
-    [topic.value, topicDesc.value],
+    topic.value,
     {
-      yPercent: 100,
+      yPercent: 30,
       opacity: 0,
       ease: 'power4.in',
       scale: 0.9,
       scrollTrigger: {
         trigger: panel.value,
         pin: false, // pin the trigger element while active
-        start: 'top 300px', // when the top of the trigger hits the top of the viewport
-        end: '+=100px', // end after scrolling 300px beyond the start
+        start: 'top 80%', // when the top of the trigger hits the top of the viewport
+        end: '10% 80%', // end after scrolling 300px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        // markers: true,
+      },
+    })
+  $gsap.from(
+    [topicDesc.value, intro.value],
+    {
+      yPercent: 30,
+      opacity: 0,
+      ease: 'power4.in',
+      scale: 0.9,
+      stagger: 0.5,
+      scrollTrigger: {
+        trigger: panel.value,
+        pin: false, // pin the trigger element while active
+        start: 'top 80%', // when the top of the trigger hits the top of the viewport
+        end: '50% 80%', // end after scrolling 300px beyond the start
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         markers: false,
       },
     })
-  $gsap.from(intro.value, {
-    yPercent: 100, opacity: 0,
-    scrollTrigger: {
-      trigger: panel.value,
-      pin: false, // pin the trigger element while active
-      start: '200px 300px', // when the top of the trigger hits the top of the viewport
-      end: '+=100px', // end after scrolling 300px beyond the start
-      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-      markers: false,
-    },
-  })
 }
 
 onMounted(() => {
@@ -87,6 +93,7 @@ onMounted(() => {
 .topic-body {
   max-width: var(--max-width);
   margin: 0 auto;
+  padding-left: 0.625rem;
 }
 .topic-title {
   font-family: var(--font-work-sans);
@@ -118,12 +125,7 @@ onMounted(() => {
 .economic-wrap {
   color: var(--white);
   background-color: var(--black);
-  padding: 4.75rem 7rem;
-}
-.economic-body {
-  max-width: 100rem;
-  margin: 0 auto;
-
+  padding: 4.75rem 5.125rem;
   position: relative;
 }
 .economic-desc {
@@ -135,12 +137,19 @@ onMounted(() => {
   line-height: 170%;
 
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 4.75rem;
+  left: 5.125rem;
+}
+.economic-body {
+  width: 80vw;
+  height: calc(0.65 * 80vw);
+  max-width: 85.375rem;
+  max-height: 55.5rem;
+  margin: 0 auto;
 }
 .economic-animate {
   width: 100%;
-  height: calc(0.5625 * 100vw);
+  height: 100%;
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
@@ -167,7 +176,7 @@ onMounted(() => {
     line-height: 120%;
 
     margin-top: 1.4375rem;
-    height: 10.625rem;
+    height: 12rem;
   }
   .topic-animate {
     width: 16rem;
@@ -181,10 +190,11 @@ onMounted(() => {
     padding: 1.375rem 0 2.25rem;
   }
   .economic-body {
-    max-width: 100rem;
-    margin: 0 auto;
+    width: 100vw;
+    height: calc(0.65 * 100vw);
 
     position: relative;
+    margin-top: 1.875rem;
   }
   .economic-desc {
     font-size: 0.9375rem;
@@ -197,12 +207,8 @@ onMounted(() => {
     box-sizing: border-box;
   }
   .economic-animate {
-    width: 100%;
-    height: calc(0.5625 * 100vw);
-
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1.875rem;
     display: block;
   }
 }
