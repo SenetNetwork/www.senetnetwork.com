@@ -82,7 +82,7 @@ onMounted(() => {
   background: var(--bg-gradient);
 
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 .topic-wrap {
   padding-top: 14.125rem;

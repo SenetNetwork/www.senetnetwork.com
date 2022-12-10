@@ -1,7 +1,11 @@
 <template>
-  <div ref="panel" class="section">
+  <div id="why-us" ref="panel" class="section">
     <div class="topic-wrap">
-      <img class="topic-animate" src="@/assets/images/whyus-animate1.png" />
+      <img
+        ref="topicAnimate"
+        class="topic-animate"
+        src="@/assets/images/whyus-animate1.png"
+      />
       <div class="topic-left"></div>
       <div class="topic-right">
         <div ref="topic" class="topic-title">WHY US</div>
@@ -9,7 +13,7 @@
           an authentic decentralized game network with a healthy economic
           system.
         </div>
-        <div class="divider-line">
+        <div ref="divider" class="divider-line">
           <div class="divider-label"></div>
         </div>
       </div>
@@ -17,7 +21,7 @@
     <div class="row-list">
       <!-- <img class="row-animate" src="@/assets/images/whyus-animate2.png" /> -->
       <div class="row-container">
-        <div class="row">
+        <div ref="row1" class="row">
           <div class="row-item left">
             <div class="row-title">High performance & compliance</div>
             <div class="row-desc">
@@ -34,7 +38,7 @@
             <img src="@/assets/images/whyus-img1.png" />
           </div>
         </div>
-        <div class="row">
+        <div ref="row2" class="row">
           <div class="row-item left">
             <div class="row-title">Intelligent driven</div>
             <div class="row-desc">
@@ -49,7 +53,7 @@
             <img src="@/assets/images/whyus-img2.png" />
           </div>
         </div>
-        <div class="row">
+        <div ref="row3" class="row">
           <div class="row-item left">
             <div class="row-title">User Friendly</div>
             <div class="row-desc">
@@ -63,7 +67,7 @@
             <img src="@/assets/images/whyus-img3.png" />
           </div>
         </div>
-        <div class="row">
+        <div ref="row4" class="row">
           <div class="row-item left">
             <div class="row-title">Agile development</div>
             <div class="row-desc">
@@ -85,24 +89,54 @@
 </template>
 <script setup>
 // alternatively, you can also use it here
-const { $gsap } = useNuxtApp()
+const { $gsap, $ScrollTrigger } = useNuxtApp()
 const panel = ref()
 
 const topic = ref()
 const topicDesc = ref()
+const divider = ref()
+const topicAnimate = ref()
+
+function rotateAnimate() {
+  $gsap.from(topicAnimate.value, {
+    xPercent: -100,
+    duration: 2,
+    rotate: 360,
+    scale: 0.8,
+    ease: "slow(0.7, 0.7, false)",
+    repeat: -1,
+    yoyo: true
+  })
+}
+
 function textAnimate() {
+  $gsap.from(topic.value, {
+    yPercent: 30,
+    opacity: 0,
+    ease: 'power4.in',
+    scale: 0.9,
+    scrollTrigger: {
+      trigger: panel.value,
+      pin: false, // pin the trigger element while active
+      start: 'top 80%', // when the top of the trigger hits the top of the viewport
+      end: '+=50px 80%', // end after scrolling 300px beyond the start
+      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      markers: false,
+    },
+  })
   $gsap.from(
-    [topic.value, topicDesc.value],
+    [topicDesc.value, divider.value],
     {
-      yPercent: 100,
+      yPercent: 30,
       opacity: 0,
       ease: 'power4.in',
       scale: 0.9,
+      stagger: 0.5,
       scrollTrigger: {
         trigger: panel.value,
         pin: false, // pin the trigger element while active
-        start: 'top center', // when the top of the trigger hits the top of the viewport
-        end: '+=100px', // end after scrolling 300px beyond the start
+        start: 'top 80%', // when the top of the trigger hits the top of the viewport
+        end: '30% 80%', // end after scrolling 300px beyond the start
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         markers: false,
       },
@@ -110,39 +144,70 @@ function textAnimate() {
 }
 
 function rowTextAnimate() {
-  $gsap.from(
-    '.row .row-title',
-    {
-      xPercent: -100,
-      opacity: 0,
-      ease: 'power4.in',
-      scale: 0.9,
-      scrollTrigger: {
-        trigger: panel.value,
-        pin: false, // pin the trigger element while active
-        start: 'top top', // when the top of the trigger hits the top of the viewport
-        end: '+=100px', // end after scrolling 300px beyond the start
-        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        markers: false,
-      },
-    }
-  )
-  $gsap.from('.row .row-desc', {
-    yPercent: 100, opacity: 0,
-    scrollTrigger: {
-      trigger: panel.value,
-      pin: false, // pin the trigger element while active
-      start: 'top top', // when the top of the trigger hits the top of the viewport
-      end: '+=100px', // end after scrolling 300px beyond the start
-      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-      markers: false,
-    },
+  $gsap.utils.toArray('#why-us .row .row-title').forEach((el, i) => {
+    $gsap.from(
+      el,
+      {
+        yPercent: 30,
+        opacity: 0,
+        ease: 'power4.in',
+        scale: 0.9,
+        scrollTrigger: {
+          trigger: el,
+          pin: false, // pin the trigger element while active
+          start: 'top 80%', // when the top of the trigger hits the top of the viewport
+          end: '+=50px 80%', // end after scrolling 300px beyond the start
+          scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+          markers: false,
+        },
+      }
+    )
+  })
+  $gsap.utils.toArray('#why-us .row .row-desc').forEach((el, i) => {
+    $gsap.from(
+      el,
+      {
+        yPercent: 30,
+        opacity: 0,
+        ease: 'power4.in',
+        scale: 0.9,
+        scrollTrigger: {
+          trigger: el,
+          pin: false, // pin the trigger element while active
+          start: 'top 80%', // when the top of the trigger hits the top of the viewport
+          end: '+=50px 80%', // end after scrolling 300px beyond the start
+          scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+          markers: false,
+        },
+      }
+    )
+  })
+}
+
+const row1 = ref()
+const row2 = ref()
+const row3 = ref()
+const row4 = ref()
+function pinAnimate() {
+  const list = [row1.value, row2.value, row3.value, row4.value]
+  list.forEach((panel, i) => {
+    const end = i === 3 ? 'top top' : 'bottom top'
+    $ScrollTrigger.create({
+      trigger: panel,
+      start: 'top top',
+      end,
+      pin: true,
+      pinSpacing: false,
+      markers: false
+    })
   })
 }
 
 onMounted(() => {
+  rotateAnimate()
   textAnimate()
   rowTextAnimate()
+  pinAnimate()
 })
 </script>
 <style scoped>
@@ -152,6 +217,7 @@ onMounted(() => {
 
   position: relative;
   z-index: 1;
+  padding-bottom: 60px;
 }
 .topic-wrap {
   display: flex;
@@ -195,6 +261,7 @@ onMounted(() => {
 
   margin-top: 30px;
   width: 100%;
+  min-height: 390px;
 }
 
 .divider-line {
@@ -216,9 +283,7 @@ onMounted(() => {
 }
 
 .row-list {
-  padding-top: 80px;
-  padding-bottom: 200px;
-
+  padding-top: 60px;
   position: relative;
 }
 .row-animate {
@@ -231,11 +296,13 @@ onMounted(() => {
   display: flex;
   background-color: var(--black);
   color: var(--white);
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.row + div {
+/* .row + div {
   margin-top: 30px;
-}
+} */
 .row-item {
 }
 .row-item.left {
@@ -268,8 +335,8 @@ onMounted(() => {
   margin-top: 35px;
 }
 .row-item > img {
-  width: calc(0.6667 * 100vw * 0.9);
-  height: calc(0.6667 * 100vw * 0.9 * 0.5625);
+  width: calc(2 / 3 * 100vw * 0.9);
+  height: calc(2 / 3 * 100vw * 0.9 * 0.714);
 }
 
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
@@ -312,6 +379,7 @@ onMounted(() => {
     width: 96%;
     margin-left: auto;
     margin-right: auto;
+    min-height: 196px;
   }
 
   .divider-line {
@@ -334,7 +402,7 @@ onMounted(() => {
 
   .row-list {
     padding-top: 32px;
-    padding-bottom: 80px;
+    padding-bottom: 32px;
   }
   .row-animate {
     display: none;
@@ -361,12 +429,16 @@ onMounted(() => {
     padding-top: 48px;
   }
   .row-desc {
+    font-family: var(--font-work-sans);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 170%;
     display: none;
   }
   .row-item > img {
-    width: 90%;
-    min-height: auto;
-    height: 100%;
+    width: calc(90vw);
+    height: calc(90vw * 0.714);
     margin: 0 auto;
 
     margin-top: 24px;

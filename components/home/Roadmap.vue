@@ -113,7 +113,6 @@ onMounted(() => {
   textAnimate()
 
   clientWidth.value = window.innerWidth
-  let anim
   function initAnimate() {
     const offectWidth = cardWrap.value.clientWidth - window.innerWidth + cardWrap.value.offsetLeft * 2
     const height = cardWrap.value.clientHeight + offectWidth
@@ -178,7 +177,7 @@ onMounted(() => {
       }
     });
 
-    anim = $gsap.to(cardWrap.value, {
+    $gsap.to(cardWrap.value, {
         x: - offectWidth,
         ease: 'none',
         scrollTrigger: {
@@ -192,9 +191,65 @@ onMounted(() => {
         },
       })
   }
+  function resetAnimate() {
+    const offectWidth = cardWrap.value.clientWidth - window.innerWidth + cardWrap.value.offsetLeft * 2
+    const height = cardWrap.value.clientHeight + offectWidth
+    if (offectWidth < 0) return false
+
+    $gsap.to(circle1.value, {
+      ease: 'none',
+      scrollTrigger: {
+        trigger: panel.value,
+        start: `0 top`,
+        scrub: 0.3,
+        // markers: true,
+      }
+    });
+    $gsap.to(circle2.value, {
+      ease: 'none',
+      scrollTrigger: {
+        trigger: panel.value,
+        start: `+=${height * 0.25}px top`,
+        scrub: 0.3,
+        markers: false,
+      }
+    });
+    $gsap.to(circle3.value, {
+      ease: 'none',
+      scrollTrigger: {
+        trigger: panel.value,
+        start: `+=${height * 0.5}px top`,
+        scrub: 0.3
+      }
+    });
+    $gsap.to(circle4.value, {
+      ease: 'none',
+      scrollTrigger: {
+        trigger: panel.value,
+        start: `+=${height * 0.75}px top`,
+        scrub: 0.3
+      }
+    });
+
+    $gsap.to(cardWrap.value, {
+        ease: 'none',
+        scrollTrigger: {
+          trigger: panel.value,
+          start: 'top top',
+          end: `+=${height}px top`,
+          pin: false,
+          scrub: 1,
+          markers: false,
+          // base vertical scrolling on how wide the container is so it feels more natural.
+        },
+      })
+  }
   $ScrollTrigger.matchMedia({
     "(min-width: 576px)": function() {
       initAnimate()
+    },
+    "(max-width: 576px)": function() {
+      resetAnimate()
     }
   })
 })
@@ -205,6 +260,8 @@ onMounted(() => {
   padding-left: 6.25rem;
   padding-bottom: 4rem;
   position: relative;
+  z-index: 2;
+  background-color: var(--white);
 }
 .panel-animate {
   position: absolute;

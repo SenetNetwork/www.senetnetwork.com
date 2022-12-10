@@ -11,7 +11,7 @@
           <div :class="itemClass(0)" @click="clickItem(0)">
             <div class="team_item-head">
               <div class="team_item-avatar">
-                <img src="@/assets/images/default-avatar.png" alt="" />
+                <img src="@/assets/images/team-avatar0.png" alt="" />
               </div>
               <div class="team_item-info">
                 <div class="team_item-name">Loki</div>
@@ -54,11 +54,11 @@
           <div :class="itemClass(1)" @click="clickItem(1)">
             <div class="team_item-head">
               <div class="team_item-avatar">
-                <img src="@/assets/images/default-avatar.png" alt="" />
+                <img src="@/assets/images/team-avatar1.png" alt="" />
               </div>
               <div class="team_item-info">
-                <div class="team_item-name">Loki</div>
-                <div class="item_item-label">Founder</div>
+                <div class="team_item-name">Ranger</div>
+                <div class="item_item-label">Co-Founder</div>
               </div>
             </div>
             <div class="team_item-body">
@@ -97,11 +97,11 @@
           <div :class="itemClass(2)" @click="clickItem(2)">
             <div class="team_item-head">
               <div class="team_item-avatar">
-                <img src="@/assets/images/default-avatar.png" alt="" />
+                <img src="@/assets/images/team-avatar2.png" alt="" />
               </div>
               <div class="team_item-info">
-                <div class="team_item-name">Loki</div>
-                <div class="item_item-label">Founder</div>
+                <div class="team_item-name">Lemon</div>
+                <div class="item_item-label">Design lead</div>
               </div>
             </div>
             <div class="team_item-body">
@@ -140,11 +140,11 @@
           <div :class="itemClass(3)" @click="clickItem(3)">
             <div class="team_item-head">
               <div class="team_item-avatar">
-                <img src="@/assets/images/default-avatar.png" alt="" />
+                <img src="@/assets/images/team-avatar3.png" alt="" />
               </div>
               <div class="team_item-info">
-                <div class="team_item-name">Loki</div>
-                <div class="item_item-label">Founder</div>
+                <div class="team_item-name">Grace</div>
+                <div class="item_item-label">Business/Market</div>
               </div>
             </div>
             <div class="team_item-body">
@@ -183,11 +183,11 @@
           <div :class="itemClass(4)" @click="clickItem(4)">
             <div class="team_item-head">
               <div class="team_item-avatar">
-                <img src="@/assets/images/default-avatar.png" alt="" />
+                <img src="@/assets/images/team-avatar4.png" alt="" />
               </div>
               <div class="team_item-info">
-                <div class="team_item-name">Loki</div>
-                <div class="item_item-label">Founder</div>
+                <div class="team_item-name">Zohar</div>
+                <div class="item_item-label">web3 Adviser</div>
               </div>
             </div>
             <div class="team_item-body">
@@ -226,11 +226,11 @@
           <div :class="itemClass(5)" @click="clickItem(5)">
             <div class="team_item-head">
               <div class="team_item-avatar">
-                <img src="@/assets/images/default-avatar.png" alt="" />
+                <img src="@/assets/images/team-avatar0.png" alt="" />
               </div>
               <div class="team_item-info">
-                <div class="team_item-name">Loki</div>
-                <div class="item_item-label">Founder</div>
+                <div class="team_item-name">Alen</div>
+                <div class="item_item-label">web3 Adviser</div>
               </div>
             </div>
             <div class="team_item-body">
@@ -274,9 +274,17 @@
 </template>
 
 <script setup>
-const openIndex = ref(0)
+const { $gsap, $ScrollTrigger } = useNuxtApp()
+
+const openIndex = ref(-1)
 const itemClass = computed(() => index => `team_item${index === openIndex.value ? ' active' : ''}`)
-const clickItem = index => openIndex.value = index
+const clickItem = index => {
+  if (openIndex.value === index)  {
+    openIndex.value = -1
+    return
+  }
+  openIndex.value = index
+}
 
 const panel = ref()
 const topic = ref()
@@ -285,30 +293,28 @@ function textAnimate() {
   $gsap.from(
     [topic.value, topicDesc.value],
     {
-      yPercent: 100,
+      yPercent: 30,
       opacity: 0,
       ease: 'power4.in',
       scale: 0.9,
+      stagger: 0.5,
       scrollTrigger: {
         trigger: panel.value,
         pin: false, // pin the trigger element while active
         start: 'top center', // when the top of the trigger hits the top of the viewport
-        end: '+=100px', // end after scrolling 300px beyond the start
+        end: '+=20px center', // end after scrolling 300px beyond the start
         scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        // markers: true,
+        markers: false,
       },
     })
 }
 
-const { $gsap } = useNuxtApp()
 const clientWidth = ref(0)
 onMounted(() => {
   textAnimate()
 
   clientWidth.value = window.innerWidth
-  let anim
   function initAnimate() {
-
     const elTeamConatiner = document.querySelector('.team-container')
     const elTeamPlaceholder = document.querySelector('.team-placeholder')
     const elTeamList = document.querySelector('.team_list')
@@ -322,10 +328,7 @@ onMounted(() => {
     elTeamConatiner.style.position = 'sticky'
     elTeamConatiner.style.top = stickyTop - 50 + 'px'
 
-    if (anim) {
-      return
-    }
-    anim = $gsap.to('.team_list', {
+    $gsap.to('.team_list', {
       x: - offectWidth,
       ease: 'none',
       scrollTrigger: {
@@ -339,31 +342,20 @@ onMounted(() => {
       },
     })
   }
-  function destroyAnimate() {
-    if (anim) {
-      anim.progress(0)
-      anim.kill()
-    }
-    anim = null
-  }
-  if (clientWidth.value > 576) {
-    initAnimate()
-  }
-  window.addEventListener('resize', () => {
-    clientWidth.value = window.innerWidth
 
-    if (clientWidth.value > 576) {
+  $ScrollTrigger.matchMedia({
+    "(min-width: 576px)": function() {
       initAnimate()
-    } else {
-      destroyAnimate()
     }
   })
 })
+
 </script>
 
 <style scoped>
 .team {
-  padding: 6.25rem 0;
+  padding: 6rem 0;
+  padding-top: 0;
   background-color: var(--black);
 }
 
@@ -374,7 +366,6 @@ onMounted(() => {
   width: 61.46vw;
   height: 25rem;
   color: var(--white);
-  border-right: 1px solid var(--white);
 }
 
 .team_head::before {
@@ -383,17 +374,20 @@ onMounted(() => {
   top: 0;
   bottom: 0;
   right: 6.25rem;
-  border-right: 1px solid var(--white);
 }
 
 .team_head-sub {
-  position: relative;
-  border-top: 1px solid var(--white);
-  padding: 8.1875rem 6.25rem 2rem;
-  font-size: 1.375rem;
+  font-family: var(--font-work-sans);
+  font-style: normal;
   font-weight: 500;
+  font-size: 1.375rem;
   line-height: 1.625rem;
-  letter-spacing: -2%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+
+  position: relative;
+  border-top: 1px solid #d2d2d2;
+  padding: 8.1875rem 6.25rem 2rem;
 }
 
 .team_head-sub::before {
@@ -407,10 +401,13 @@ onMounted(() => {
 }
 
 .team_head-title {
-  border-top: 1px solid var(--white);
-  padding: 0 6.25rem;
+  font-family: var(--font-space-grotesk);
+  font-style: normal;
+  font-weight: 400;
   font-size: 6.25rem;
-  line-height: 5.1845rem;
+  line-height: 130%;
+
+  padding: 0 6.25rem;
 }
 
 .team_body {
@@ -501,7 +498,11 @@ onMounted(() => {
 }
 
 .team_item-body li {
-  margin: 0.75rem 0;
+  font-family: var(--font-work-sans);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 130%;
   list-style: square;
 }
 
@@ -529,7 +530,7 @@ onMounted(() => {
   .team_head {
     width: auto;
     height: auto;
-    padding: 2.5rem 0;
+    padding: 1.5rem 0;
     margin-bottom: 0;
     border: none;
     text-align: center;

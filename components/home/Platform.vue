@@ -89,7 +89,7 @@ onMounted(() => {
   background: var(--black);
 
   display: flex;
-  z-index: 2;
+  z-index: 4;
 }
 .panel-item {
   flex: 1;
