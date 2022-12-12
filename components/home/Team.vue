@@ -7,7 +7,7 @@
         <div ref="topicDesc" class="team_head-title">TEAM</div>
       </div>
       <div class="team_body">
-        <div class="team_list">
+        <div ref="cardWrap" class="team_list">
           <div :class="itemClass(0)" @click="clickItem(0)">
             <div class="team_item-head">
               <div class="team_item-avatar">
@@ -269,7 +269,7 @@
         </div>
       </div>
     </div>
-    <div class="team-placeholder" />
+    <!-- <div class="team-placeholder" /> -->
   </div>
 </template>
 
@@ -309,39 +309,31 @@ function textAnimate() {
     })
 }
 
-const clientWidth = ref(0)
+const cardWrap = ref()
+
 onMounted(() => {
   textAnimate()
 
-  clientWidth.value = window.innerWidth
   function initAnimate() {
-    const elTeamConatiner = document.querySelector('.team-container')
-    const elTeamPlaceholder = document.querySelector('.team-placeholder')
-    const elTeamList = document.querySelector('.team_list')
-
-    const offectWidth = elTeamList.clientWidth - window.innerWidth + elTeamList.offsetLeft * 2
-    const stickyTop = window.innerHeight - elTeamConatiner.clientHeight
-
+    const offectWidth = cardWrap.value.clientWidth - window.innerWidth + cardWrap.value.offsetLeft * 2
+    const height = cardWrap.value.clientHeight + offectWidth
     if (offectWidth < 0) return false
 
-    elTeamPlaceholder.style.height = elTeamConatiner.clientHeight + offectWidth + 'px'
-    elTeamConatiner.style.position = 'sticky'
-    elTeamConatiner.style.top = stickyTop - 50 + 'px'
-
-    $gsap.to('.team_list', {
-      x: - offectWidth,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.team-placeholder',
-        start: 'top center',
-        end: 'bottom center',
-        pin: false,
-        scrub: 1,
-        markers: false,
-        // base vertical scrolling on how wide the container is so it feels more natural.
-      },
-    })
+    $gsap.to(cardWrap.value, {
+        x: - offectWidth,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: panel.value,
+          start: 'top top',
+          end: `+=${height}px top`,
+          pin: true,
+          scrub: 1,
+          markers: false,
+          // base vertical scrolling on how wide the container is so it feels more natural.
+        },
+      })
   }
+
 
   $ScrollTrigger.matchMedia({
     "(min-width: 576px)": function() {
@@ -357,6 +349,8 @@ onMounted(() => {
   padding: 6rem 0;
   padding-top: 0;
   background-color: var(--black);
+
+  position: relative;
 }
 
 .team_head {
