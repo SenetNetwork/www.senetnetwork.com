@@ -355,8 +355,8 @@ onMounted(() => {
 
 .team_head {
   position: relative;
-  padding: 5.422rem 0 2.5rem;
-  margin-bottom: 2.69rem;
+  padding: 3rem 0 2.5rem;
+  margin-bottom: 0;
   width: 61.46vw;
   height: 25rem;
   color: var(--white);
@@ -381,7 +381,7 @@ onMounted(() => {
 
   position: relative;
   border-top: 1px solid #d2d2d2;
-  padding: 8.1875rem 6.25rem 2rem;
+  padding: 6rem 6.25rem 2rem;
 }
 
 .team_head-sub::before {
@@ -477,7 +477,7 @@ onMounted(() => {
 
 .team_item-body ul {
   height: 100%;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
   overflow-y: auto;
 }
 
@@ -498,6 +498,7 @@ onMounted(() => {
   font-size: 16px;
   line-height: 130%;
   list-style: square;
+  margin-top: 8px;
 }
 
 .team_item.active {
@@ -580,6 +581,11 @@ onMounted(() => {
     width: auto;
     height: 0;
     padding: 0 1.25rem 1.25rem;
+  }
+  .team_item-body ul {
+    height: 100%;
+    padding-left: 1rem;
+    overflow-y: auto;
   }
   .team_item.active {
     width: auto;

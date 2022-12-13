@@ -159,11 +159,11 @@ function imgAnimate() {
     ease: 'power1.inOut',
   }, '<0.5')
   .from(imgArrow.value, {
-    yPercent: 30,
+    rotate: -220,
     opacity: 0,
-    ease: 'power4.in',
+    duration: 2,
     scale: 0.9,
-  }, '<0.5')
+  }, '<')
   .from(imgStick.value, {
     yPercent: 30,
     xPercent: 50,
@@ -178,7 +178,7 @@ function imgAnimate() {
     xPercent: 100,
     opacity: 0,
     duration: 2, // how long the animation lasts
-  })
+  }, '<0.5')
 }
 
 onMounted(() => {
