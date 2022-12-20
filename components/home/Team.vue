@@ -20,34 +20,12 @@
             </div>
             <div class="team_item-body">
               <ul>
+                <li>web3.0 serial entrepreneur</li>
                 <li>
                   Have rich experience of GamefI production and distribution
                   from 0 to 1
                 </li>
-                <li>
-                  once made and launched a card-based blockchain game in just
-                  one week
-                </li>
-                <li>
-                  served as consultant in the production plan of FPS games and
-                  Metaverse games for the European NFT project "ALPACADABRAZ"
-                </li>
-                <li>
-                  2019 "Huxiang Cup" Network Security Skills Competition
-                  Champion
-                </li>
-                <li>
-                  4-years experience in network security red-blue confrontation
-                  and code auditing
-                </li>
-                <li>
-                  Used to be responsible for application security, security
-                  operations and other related work in a large factory
-                </li>
-                <li>
-                  Once in charge of network security penetration and audit of
-                  Winter Olympics-related projects
-                </li>
+                <li>Ex-Tencent Engineer</li>
               </ul>
             </div>
           </div>
@@ -63,33 +41,11 @@
             </div>
             <div class="team_item-body">
               <ul>
+                <li>13-years software development experience</li>
+                <li>Technical partner of a digital exchange</li>
                 <li>
-                  Have rich experience of GamefI production and distribution
-                  from 0 to 1
-                </li>
-                <li>
-                  once made and launched a card-based blockchain game in just
-                  one week
-                </li>
-                <li>
-                  served as consultant in the production plan of FPS games and
-                  Metaverse games for the European NFT project "ALPACADABRAZ"
-                </li>
-                <li>
-                  2019 "Huxiang Cup" Network Security Skills Competition
-                  Champion
-                </li>
-                <li>
-                  4-years experience in network security red-blue confrontation
-                  and code auditing
-                </li>
-                <li>
-                  Used to be responsible for application security, security
-                  operations and other related work in a large factory
-                </li>
-                <li>
-                  Once in charge of network security penetration and audit of
-                  Winter Olympics-related projects
+                  Good at development of blockchain projects such as exchanges,
+                  wallets, public chains, etc.
                 </li>
               </ul>
             </div>
@@ -100,44 +56,25 @@
                 <img src="@/assets/images/team-avatar2.png" alt="" />
               </div>
               <div class="team_item-info">
-                <div class="team_item-name">Lemon</div>
-                <div class="item_item-label">Design lead</div>
+                <div class="team_item-name">Libin</div>
+                <div class="item_item-label">Independent director</div>
               </div>
             </div>
             <div class="team_item-body">
               <ul>
+                <li>Partner, Beijing Zhonglun (Guangzhou) Law Firm</li>
                 <li>
-                  Have rich experience of GamefI production and distribution
-                  from 0 to 1
+                  Juris Doctor, Faculty of Law, The Chinese University of Hong
+                  Kong
                 </li>
                 <li>
-                  once made and launched a card-based blockchain game in just
-                  one week
-                </li>
-                <li>
-                  served as consultant in the production plan of FPS games and
-                  Metaverse games for the European NFT project "ALPACADABRAZ"
-                </li>
-                <li>
-                  2019 "Huxiang Cup" Network Security Skills Competition
-                  Champion
-                </li>
-                <li>
-                  4-years experience in network security red-blue confrontation
-                  and code auditing
-                </li>
-                <li>
-                  Used to be responsible for application security, security
-                  operations and other related work in a large factory
-                </li>
-                <li>
-                  Once in charge of network security penetration and audit of
-                  Winter Olympics-related projects
+                  New York University School of Law, Visiting Scholar (Global
+                  Fellow)
                 </li>
               </ul>
             </div>
           </div>
-          <div :class="itemClass(3)" @click="clickItem(3)">
+          <div v-if="false" :class="itemClass(3)" @click="clickItem(3)">
             <div class="team_item-head">
               <div class="team_item-avatar">
                 <img src="@/assets/images/team-avatar3.png" alt="" />
@@ -180,7 +117,7 @@
               </ul>
             </div>
           </div>
-          <div :class="itemClass(4)" @click="clickItem(4)">
+          <div v-if="false" :class="itemClass(4)" @click="clickItem(4)">
             <div class="team_item-head">
               <div class="team_item-avatar">
                 <img src="@/assets/images/team-avatar4.png" alt="" />
@@ -223,7 +160,7 @@
               </ul>
             </div>
           </div>
-          <div :class="itemClass(5)" @click="clickItem(5)">
+          <div v-if="false" :class="itemClass(5)" @click="clickItem(5)">
             <div class="team_item-head">
               <div class="team_item-avatar">
                 <img src="@/assets/images/team-avatar0.png" alt="" />
@@ -276,7 +213,7 @@
 <script setup>
 const { $gsap, $ScrollTrigger } = useNuxtApp()
 
-const openIndex = ref(-1)
+const openIndex = ref(0)
 const itemClass = computed(() => index => `team_item${index === openIndex.value ? ' active' : ''}`)
 const clickItem = index => {
   if (openIndex.value === index)  {

@@ -52,6 +52,7 @@
             <p>Launch SNLauncher</p>
             <p>Launch SNMini-Program</p>
             <p>Launch the "Dream Builder" program</p>
+            <p>Launch SCaaS</p>
           </div>
         </div>
         <div ref="cardItem4" class="card-item">
@@ -256,7 +257,7 @@ onMounted(() => {
 </script>
 <style scoped>
 .panel {
-  padding-top: 6rem;
+  padding-top: 5rem;
   padding-left: 6.25rem;
   padding-bottom: 4rem;
   position: relative;
@@ -328,8 +329,8 @@ onMounted(() => {
 
 .card-item {
   border: 1px solid var(--black);
-  width: 1140px;
-  height: 534px;
+  width: calc(213.4831 * 60vh);
+  height: calc(60vh);
   padding: 3.125rem;
 
   position: relative;
@@ -375,6 +376,26 @@ onMounted(() => {
 
   margin-top: 10.125rem;
 }
+
+@media (max-width: 1500px) {
+  .panel {
+    padding-top: 3rem;
+    padding-left: 6.25rem;
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+    background-color: var(--white);
+  }
+  .card-item {
+    border: 1px solid var(--black);
+    width: calc(213.4831 * 55vh);
+    height: calc(55vh);
+    padding: 3.125rem;
+
+    position: relative;
+  }
+}
+
 /* `sm` applies to x-small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .panel {

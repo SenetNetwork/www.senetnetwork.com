@@ -39,7 +39,11 @@
     <div ref="contactWrap" class="contact-wrap">
       <ul class="contact-us">
         <li>
-          <a ref="contact1" href="https://discord.com/" target="_blank">
+          <a
+            ref="contact1"
+            href="https://discord.gg/qh9dG9EwQx"
+            target="_blank"
+          >
             <img
               class="icon icon-discord"
               src="@/assets/images/icon-discord.svg"
@@ -49,7 +53,11 @@
           </a>
         </li>
         <li>
-          <a ref="contact2" href="https://twitter.com/" target="_blank">
+          <a
+            ref="contact2"
+            href="https://twitter.com/SenetNetwork"
+            target="_blank"
+          >
             <img
               class="icon icon-twitter"
               src="@/assets/images/icon-twitter.svg"
@@ -61,7 +69,11 @@
       </ul>
       <ul class="contact-us">
         <li>
-          <a ref="contact3" href="https://medium.com/" target="_blank">
+          <a
+            ref="contact3"
+            href="https://medium.com/@SenetNetwork"
+            target="_blank"
+          >
             <img
               class="icon icon-medium"
               src="@/assets/images/icon-medium.svg"
@@ -71,7 +83,7 @@
           </a>
         </li>
         <li>
-          <a ref="contact4" href="https://mail.google.com/" target="_blank">
+          <a ref="contact4" href="mailto:hi@senetnetwork.io" target="_blank">
             <img class="icon icon-email" src="@/assets/images/icon-email.svg" />
             <span class="text">/Email</span>
             <img class="icon-arrow" src="@/assets/images/icon-arrow.svg" />

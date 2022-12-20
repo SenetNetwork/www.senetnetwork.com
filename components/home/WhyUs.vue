@@ -44,8 +44,8 @@
             <div class="row-desc">
               Introduce advertisers and big data recommendation algorithms,
               increase monetization channels, realize the "triangle balance" of
-              the positive economic cycle, and increase users· engagement.
-              Meanwhile, Use Al governance economic model to avoid the risk of
+              the positive economic cycle, and increase users engagement.
+              Meanwhile, Use Al governance economic model to avoid the risk of a
               "death spiral" in time.
             </div>
           </div>
@@ -57,7 +57,7 @@
           <div class="row-item left">
             <div class="row-title">User Friendly</div>
             <div class="row-desc">
-              In SENET, uses can easily register in game platform or Wallet
+              In SENET, users can easily register on a game platform or Wallet
               through common methods such as Google or WeChat. SENET wallet
               integrates MPC function, which is safe and convenient without
               keys.
@@ -73,10 +73,10 @@
             <div class="row-desc">
               Middleware RHINO BIRD is provided to reduce the difficulty of
               blockchain game development, which will minimize the modification
-              of existing games and effectively lower the threshold of technic
+              of existing games and effectively lower the threshold of technical
               and paying in blockchain games. At the same time, the IGO platform
               will solve the problems of pre-sale assets and financing before
-              the game goes on line.
+              the game goes online.
             </div>
           </div>
           <div class="row-item right">

@@ -10,13 +10,13 @@
         <div class="divider-label"></div>
       </div>
       <div ref="intro" class="intro">
-        SNET not just focuses on the value of game experience, but also embeds
+        SENET not just focuses on the value of game experience, but also embeds
         an economic system that connects with reality. By integrating equipment,
         securitization, game token mechanism securitization, security audit,
         native cloud security defense, advertising services, game asset
         management, AI economic model governance, big data user behavior
         analysis, recommendation network and other functions, we aim to help
-        user more safely and conveniently enter the Web3.0 World.
+        users more safely and conveniently enter the Web3.0 World.
       </div>
     </div>
     <div class="panel-item right">
@@ -141,7 +141,6 @@ onMounted(() => {
   font-weight: 400;
   font-size: 1.3125rem;
   line-height: 1.9375rem;
-  text-align: justify;
 
   padding-left: 5.125rem;
   padding-right: 5.125rem;
