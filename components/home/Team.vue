@@ -53,7 +53,7 @@
           <div :class="itemClass(2)" @click="clickItem(2)">
             <div class="team_item-head">
               <div class="team_item-avatar">
-                <img src="@/assets/images/team-avatar2.png" alt="" />
+                <img src="@/assets/images/team-avatar3.png" alt="" />
               </div>
               <div class="team_item-info">
                 <div class="team_item-name">Libin</div>
@@ -358,8 +358,8 @@ onMounted(() => {
   flex-shrink: 0;
   border: 1px solid var(--white);
   border-left: none;
-  height: 31.25rem;
-  padding: 4rem 2rem;
+  height: 20rem;
+  padding: 3rem 2rem;
   display: flex;
   gap: 2rem;
   color: var(--white);
@@ -446,7 +446,7 @@ onMounted(() => {
 
 .team_item.active .team_item-head {
   width: 8.375rem;
-  transform: translateY(-5rem);
+  transform: translateY(-2.5rem);
   /* justify-content: flex-start; */
 }
 
