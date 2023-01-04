@@ -7,5 +7,6 @@
   <HomeWhyUs />
   <HomeTeam />
   <HomeCommunity />
+  <HomePartnership />
   <HomeFooter />
 </template>
