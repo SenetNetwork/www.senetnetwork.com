@@ -4,7 +4,7 @@
       Senet network- Games connect the world
     </div>
     <div ref="sloganDesc" class="slogan-desc">
-      A distribution network that commits to developing blockchain games and
+      A distributed network that commits to developing blockchain games and
       helps traditional games transform into Web3.0 with legality and
       compliance.
     </div>

@@ -6,7 +6,7 @@
       <div class="topic-body">
         <div ref="topic" class="topic-title">Ecosystem</div>
         <div ref="topicDesc" class="topic-desc">
-          A Distribution networ Economic
+          A Distributed Network Economic
         </div>
       </div>
       <img class="topic-animate" src="@/assets/images/ecosystem-block.png" />
