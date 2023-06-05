@@ -5,8 +5,8 @@
   <HomeEcosystem />
   <HomeRoadmap />
   <HomeWhyUs />
-  <HomeTeam />
+  <!-- <HomeTeam /> -->
   <HomeCommunity />
-  <HomePartnership />
+  <!-- <HomePartnership /> -->
   <HomeFooter />
 </template>
