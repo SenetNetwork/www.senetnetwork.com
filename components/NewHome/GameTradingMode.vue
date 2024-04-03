@@ -1,7 +1,7 @@
 <template>
   <section ref="panel" class="flex-col items-center py-50">
     <h2 ref="title" class="family-medium w-50% text-center">CONTINUOUSLY PROGRESSING GAME TRADING MODE</h2>
-    <img ref='img' class="mt-19 w-50%" src="@img/TradingMode.png" alt="CONTINUOUSLY PROGRESSING GAME TRADING MODE">
+    <img ref='img' class="mt-19 w-80%" src="@img/TradingMode.png" alt="CONTINUOUSLY PROGRESSING GAME TRADING MODE">
   </section>
 </template>
 
