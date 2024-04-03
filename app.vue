@@ -1,12 +1,8 @@
 <template>
-  <div class="container">
-    <NuxtLayout>
+  <NuxtLayout>
+    <div class="overflow-hidden">
       <NuxtPage />
-    </NuxtLayout>
-  </div>
+    </div>
+  </NuxtLayout>
 </template>
-<style scoped>
-.container {
-  overflow: hidden;
-}
-</style>
+<style scoped></style>

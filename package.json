@@ -1,5 +1,5 @@
 {
-  "name": "Senet",
+  "name": "senet",
   "description": "The next generation of games",
   "private": true,
   "scripts": {
@@ -10,9 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.0.0"
+    "nuxt": "^3.10.3"
   },
   "dependencies": {
-    "gsap": "^3.11.3"
+    "@unocss/nuxt": "^0.58.5",
+    "gsap": "^3.12.5"
   }
 }

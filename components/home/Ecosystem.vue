@@ -20,10 +20,7 @@
         development of the ecosystem.
       </div>
       <div class="economic-body">
-        <img
-          class="economic-animate"
-          src="@/assets/images/ecosystem-economic.gif"
-        />
+        <img class="economic-animate" src="@/assets/images/ecosystem-economic.gif" />
       </div>
     </div>
   </div>
@@ -82,19 +79,22 @@ onMounted(() => {
   background: var(--bg-gradient);
 
   position: relative;
-  z-index: 3;
+  /* z-index: 3; */
 }
+
 .topic-wrap {
   padding-top: 14.125rem;
   padding-bottom: 1.25rem;
 
   position: relative;
 }
+
 .topic-body {
   max-width: var(--max-width);
   margin: 0 auto;
   padding-left: 0.625rem;
 }
+
 .topic-title {
   font-family: var(--font-work-sans);
   font-style: normal;
@@ -104,6 +104,7 @@ onMounted(() => {
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
+
 .topic-desc {
   font-family: var(--font-space-grotesk);
   font-style: normal;
@@ -114,6 +115,7 @@ onMounted(() => {
 
   margin-top: 0.25rem;
 }
+
 .topic-animate {
   width: 32rem;
 
@@ -128,6 +130,7 @@ onMounted(() => {
   padding: 4.75rem 5.125rem;
   position: relative;
 }
+
 .economic-desc {
   width: 44.5rem;
   font-family: var(--font-work-sans);
@@ -140,6 +143,7 @@ onMounted(() => {
   top: 4.75rem;
   left: 5.125rem;
 }
+
 .economic-body {
   width: 80vw;
   height: calc(0.65 * 80vw);
@@ -147,6 +151,7 @@ onMounted(() => {
   max-height: 55.5rem;
   margin: 0 auto;
 }
+
 .economic-animate {
   width: 100%;
   height: 100%;
@@ -157,20 +162,24 @@ onMounted(() => {
   .panel {
     width: 100%;
   }
+
   .topic-wrap {
     padding-top: 11.25rem;
     padding-bottom: 0;
 
     position: relative;
   }
+
   .topic-body {
     padding-left: var(--sm-pl);
     padding-right: var(--sm-pr);
   }
+
   .topic-title {
     font-size: 1.375rem;
     line-height: 1.625rem;
   }
+
   .topic-desc {
     font-size: 2.5rem;
     line-height: 120%;
@@ -178,6 +187,7 @@ onMounted(() => {
     margin-top: 1.4375rem;
     height: 12rem;
   }
+
   .topic-animate {
     width: 16rem;
     position: absolute;
@@ -189,6 +199,7 @@ onMounted(() => {
   .economic-wrap {
     padding: 1.375rem 0 2.25rem;
   }
+
   .economic-body {
     width: 100vw;
     height: calc(0.65 * 100vw);
@@ -196,6 +207,7 @@ onMounted(() => {
     position: relative;
     margin-top: 1.875rem;
   }
+
   .economic-desc {
     font-size: 0.9375rem;
     line-height: 150%;
@@ -206,6 +218,7 @@ onMounted(() => {
     width: 100%;
     box-sizing: border-box;
   }
+
   .economic-animate {
     margin-left: auto;
     margin-right: auto;

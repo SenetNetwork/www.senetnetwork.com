@@ -1,11 +1,7 @@
 <template>
   <div id="why-us" ref="panel" class="section">
     <div class="topic-wrap">
-      <img
-        ref="topicAnimate"
-        class="topic-animate"
-        src="@/assets/images/whyus-animate1.png"
-      />
+      <img ref="topicAnimate" class="topic-animate" src="@/assets/images/whyus-animate1.png" />
       <div class="topic-left"></div>
       <div class="topic-right">
         <div ref="topic" class="topic-title">WHY US</div>
@@ -219,12 +215,14 @@ onMounted(() => {
   z-index: 1;
   padding-bottom: 60px;
 }
+
 .topic-wrap {
   display: flex;
   padding-top: 60px;
 
   position: relative;
 }
+
 .topic-animate {
   width: 400px;
 
@@ -233,9 +231,11 @@ onMounted(() => {
   left: 70px;
   z-index: 1;
 }
+
 .topic-left {
   flex: 1;
 }
+
 .topic-right {
   flex: 2;
 
@@ -243,6 +243,7 @@ onMounted(() => {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
 .topic-title {
   font-family: var(--font-work-sans);
   font-style: normal;
@@ -251,6 +252,7 @@ onMounted(() => {
   line-height: 26px;
   letter-spacing: -0.02em;
 }
+
 .topic-desc {
   font-family: var(--font-space-grotesk);
   font-style: normal;
@@ -272,6 +274,7 @@ onMounted(() => {
   right: -38px;
   bottom: 0;
 }
+
 .divider-label {
   width: 251px;
   height: 35px;
@@ -286,12 +289,14 @@ onMounted(() => {
   padding-top: 60px;
   position: relative;
 }
+
 .row-animate {
   width: 500px;
   position: absolute;
   top: 16%;
   left: -330px;
 }
+
 .row {
   display: flex;
   background-color: var(--black);
@@ -303,14 +308,16 @@ onMounted(() => {
 /* .row + div {
   margin-top: 30px;
 } */
-.row-item {
-}
+.row-item {}
+
 .row-item.left {
   flex: 1;
 }
+
 .row-item.right {
   flex: 2;
 }
+
 .row-title {
   font-family: var(--font-space-grotesk);
   font-style: normal;
@@ -323,6 +330,7 @@ onMounted(() => {
   margin: 0 auto;
   margin-top: 35px;
 }
+
 .row-desc {
   font-family: var(--font-work-sans);
   font-style: normal;
@@ -334,7 +342,8 @@ onMounted(() => {
 
   margin-top: 35px;
 }
-.row-item > img {
+
+.row-item>img {
   width: calc(2 / 3 * 100vw * 0.9);
   height: calc(2 / 3 * 100vw * 0.9 * 0.714);
 }
@@ -345,9 +354,11 @@ onMounted(() => {
     padding-top: 14px;
     padding-bottom: 14px;
   }
+
   .topic-wrap {
     display: block;
   }
+
   .topic-animate {
     width: 200px;
 
@@ -355,9 +366,11 @@ onMounted(() => {
     top: 0;
     left: 0;
   }
+
   .topic-left {
     display: none;
   }
+
   .topic-right {
     flex: auto;
 
@@ -365,11 +378,13 @@ onMounted(() => {
     padding-top: 60px;
     padding-bottom: 60px;
   }
+
   .topic-title {
     font-size: 14px;
     line-height: 16px;
     text-align: center;
   }
+
   .topic-desc {
     font-size: 30px;
     line-height: 130%;
@@ -390,6 +405,7 @@ onMounted(() => {
     right: 0;
     bottom: 0;
   }
+
   .divider-label {
     width: 226px;
     height: 35px;
@@ -404,23 +420,29 @@ onMounted(() => {
     padding-top: 32px;
     padding-bottom: 32px;
   }
+
   .row-animate {
     display: none;
   }
+
   .row {
     display: block;
   }
-  .row + div {
+
+  .row+div {
     margin-top: 0;
   }
-  .row-item {
-  }
+
+  .row-item {}
+
   .row-item.left {
     flex: flex;
   }
+
   .row-item.right {
     display: flex;
   }
+
   .row-title {
     font-size: 24px;
 
@@ -428,6 +450,7 @@ onMounted(() => {
     margin: 0 auto;
     padding-top: 48px;
   }
+
   .row-desc {
     font-family: var(--font-work-sans);
     font-style: normal;
@@ -436,7 +459,8 @@ onMounted(() => {
     line-height: 170%;
     display: none;
   }
-  .row-item > img {
+
+  .row-item>img {
     width: calc(90vw);
     height: calc(90vw * 0.714);
     margin: 0 auto;
