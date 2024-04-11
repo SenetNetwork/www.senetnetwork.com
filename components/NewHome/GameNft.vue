@@ -1,19 +1,29 @@
 <template>
-  <section ref="panel" class="panel flex">
-    <div class="pl-60 py-80" ref="desc">
-      <h2 class="text-10.5 line-height-12 pr-5">
+  <section ref="panel" class="panel flex flex-col md-flex-row py-10 " md="py-30 h-80vh">
+    <div ref="desc" class="px-8 flex-col justify-center" lg="pl-60">
+      <h2 class="text-center" md="text-start">
         Game NFT transaction
       </h2>
-      <p class="text-main-dark mt-6">
+      <p class="text-main-dark mt-6 text-center" md="text-start">
         The game party releases NFT digital collections. Players can freely trade and buy them, obtain limited
         collection props or skins, and become unique in the game.
       </p>
     </div>
-    <div class="w-57% shrink-0 relative" ref="img">
-      <img ref="img1" class="absolute w-75 top-24 left-35 z-1" src="@img/game-platform-5.png"
-        alt="Game NFT transaction">
-      <img ref="img2" class="absolute w-105 top-24 left-85 z-0" src="@img/game-platform-6.png"
-        alt="Game NFT transaction">
+    <div ref="img" md="w-50% mt-0" class="shrink-0 flex items-center mt-8">
+      <img
+        md="w-30% translate-x-60%"
+        sm="w-25% translate-x-100%"
+        class="z-2 relative w-36% translate-x-50%"
+        src="@img/game-platform-5.png"
+        alt="Game asset trading platform"
+      >
+      <img
+        md="w-40% translate-x-25%"
+        sm="w-35% translate-x-55%"
+        class="z-1 relative w-46% translate-x-15%"
+        src="@img/game-platform-6.png"
+        alt="Game asset trading platform"
+      >
     </div>
   </section>
 </template>
@@ -22,8 +32,7 @@
 const { $gsap } = useNuxtApp()
 const panel = ref()
 const desc = ref()
-const img1 = ref()
-const img2 = ref()
+const img = ref()
 
 const animation = (els: HTMLElement | HTMLElement[], handle?: (opt: any) => void) => {
   const options = {
@@ -31,15 +40,15 @@ const animation = (els: HTMLElement | HTMLElement[], handle?: (opt: any) => void
     opacity: 0,
     ease: 'power4.in',
     scale: 0.9,
-    stagger: .5,
+    stagger: 0.5,
     scrollTrigger: {
       trigger: panel.value,
       pin: false, // pin the trigger element while active
       start: 'top 80%', // when the top of the trigger hits the top of the viewport
       end: '30% 80%', // end after scrolling 300px beyond the start
-      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      scrub: 1 // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
       // markers: true,
-    },
+    }
   }
   if (handle) {
     handle(options)
@@ -48,12 +57,7 @@ const animation = (els: HTMLElement | HTMLElement[], handle?: (opt: any) => void
 }
 onMounted(() => {
   animation(desc.value)
-  animation(img1.value, (options) => {
-    options.opacity = 1
-  })
-  animation(img2.value, (options) => {
-    options.yPercent = 60
-  })
+  animation(img.value)
 })
 </script>
 <style scoped></style>

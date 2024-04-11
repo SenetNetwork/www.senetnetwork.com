@@ -4,16 +4,21 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@unocss/nuxt": "^0.58.5",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.24.0",
     "nuxt": "^3.10.3"
   },
   "dependencies": {
-    "@unocss/nuxt": "^0.58.5",
-    "gsap": "^3.12.5"
+    "@vueuse/nuxt": "^10.9.0",
+    "gsap": "^3.12.5",
+    "swiper": "^11.1.0"
   }
 }

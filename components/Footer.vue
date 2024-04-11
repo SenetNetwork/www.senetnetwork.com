@@ -1,51 +1,69 @@
 <template>
-  <footer class="bg-main-dark pt-13.5 pb-21 pl-87 text-white">
+  <footer class="bg-main-dark pt-13.5 pb-21 pl-8 text-white" md="px-25">
     <IconsLogo class="w-33 h-15" color="white" />
-    <nav class="flex mt-11">
-      <ul class="w-104 flex-col gap-6 family-medium">
+    <nav class="flex flex-col gap-6 mt-11" sm="flex-row">
+      <ul class="flex-col gap-6 family-medium" sm="w-60" md="w-104">
         <li>
-          <NuxtLink class="text" to="/">Whitepaper</NuxtLink>
+          <NuxtLink class="text" to="https://www.senetnetwork.com/">
+            Whitepaper
+          </NuxtLink>
         </li>
         <li>
-          <NuxtLink class="text" to="/">Privacy Policy</NuxtLink>
+          <NuxtLink class="text" to="https://www.senetnetwork.com/">
+            Privacy Policy
+          </NuxtLink>
         </li>
         <li>
-          <NuxtLink class="text" to="/">Collection Statement</NuxtLink>
+          <NuxtLink class="text" to="https://www.senetnetwork.com/">
+            Collection Statement
+          </NuxtLink>
         </li>
         <li>
-          <NuxtLink class="text" to="/">Support</NuxtLink>
+          <NuxtLink class="text" to="https://www.senetnetwork.com/">
+            Support
+          </NuxtLink>
         </li>
         <li>
-          <NuxtLink class="text" to="/">Acceptable Use Policy</NuxtLink>
+          <NuxtLink class="text" to="https://www.senetnetwork.com/">
+            Acceptable Use Policy
+          </NuxtLink>
         </li>
         <li>
-          <NuxtLink class="text" to="/">$NEX Token T&Cs</NuxtLink>
+          <NuxtLink class="text" to="https://www.senetnetwork.com/">
+            $NEX Token T&Cs
+          </NuxtLink>
         </li>
       </ul>
       <ul class="flex-col gap-6 family-medium">
         <li>
-          <NuxtLink class="text" to="/">About us</NuxtLink>
+          <NuxtLink class="text" to="https://www.senetnetwork.com/">
+            About us
+          </NuxtLink>
         </li>
         <li>
-          <NuxtLink class="text" to="/">Careers</NuxtLink>
+          <NuxtLink class="text" to="https://www.senetnetwork.com/">
+            Careers
+          </NuxtLink>
         </li>
         <li>
-          <NuxtLink class="text" to="/">Media</NuxtLink>
+          <NuxtLink class="text" to="https://www.senetnetwork.com/">
+            Media
+          </NuxtLink>
         </li>
         <li>
           <ul flex items-center gap-7.5>
             <li>
-              <NuxtLink to="/" class="icon">
+              <NuxtLink to="https://discord.gg/HSFpUsxUN8" target="_blank" class="icon">
                 <IconsDiscord class="size-7" color="black" />
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="icon">
+              <NuxtLink to="https://twitter.com/SenetNetwork" target="_blank" class="icon">
                 <IconsTwitter class="size-7" color="black" />
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" class="icon">
+              <NuxtLink to="https://senetnetwork.medium.com/" target="_blank" class="icon">
                 <IconsMedium class="size-7" color="black" />
               </NuxtLink>
             </li>

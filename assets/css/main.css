@@ -1,11 +1,15 @@
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
-  -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch; */
   box-sizing: border-box;
   user-select: none;
-  background-color: #FAFBF3;
+  background-color: #fafbf3;
+}
+#__nuxt {
+  height: 100%;
 }
 body {
   font: 1rem/1.5 var(--font-regular);
@@ -13,17 +17,17 @@ body {
   padding: 0;
   border: 0;
   font-size: 100%;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   outline: 0;
   vertical-align: baseline;
+  /* overflow-x: hidden; */
+  /* overflow-y: scroll; */
 }
 
-body {
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-div, p, ul, li {
+div,
+p,
+ul,
+li {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -32,7 +36,8 @@ div, p, ul, li {
   vertical-align: baseline;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -41,7 +46,9 @@ a {
   color: var(--black);
   text-decoration: none;
 }
-a:active, a:link, a:visited {
+a:active,
+a:link,
+a:visited {
   text-decoration: none;
 }
 
@@ -52,47 +59,12 @@ button {
   margin: 0;
   background: none;
 }
-/* button:hover{
-  opacity: 0.6;
-} */
-/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
-@media (max-width: 1399.98px) {
-  html {
-    font-size: 14px;
-  }
-}
 
-/* `xl` applies to large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) {
-  html {
-    font-size: 14px;
-  }
-  body {
-    font: 1rem/1.5 var(--font-sans-serif);
-  }
-}
-
-/* `lg` applies to medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) { 
-
-}
-
-/* `md` applies to small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {
-
- }
-
-/* `sm` applies to x-small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-section{
+section {
   position: relative;
-  z-index:0;
+  z-index: 0;
+  /* overflow: hidden; */
 }
-h2{
-  @apply family-semi-bold text-15 line-height-18;
+h2 {
+  @apply family-semi-bold  lg-text-15 lg-line-height-15 md-text-12 md-line-height-12 sm-text-10 text-8;
 }
