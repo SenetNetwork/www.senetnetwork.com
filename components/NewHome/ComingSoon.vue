@@ -10,8 +10,8 @@
           Community
         </p>
         <p class="text-gray mt-2">
-          We will create a community about the web3 game world for players, increase interaction between players, and
-          bring more fun games to our users
+          Forge social connections with players across the global blockchain gaming community, united by
+          shared gaming interests.
         </p>
       </div>
       <div ref="card2" class="bg-white rounded-2 card">
@@ -20,8 +20,8 @@
           IGO voting
         </p>
         <p class="text-gray mt-2">
-          Each player can vote to promote their favorite games so that more players can join the
-          game.
+          Every player has a voice: Vote on the games and in-game tokens you want listed. Participate in
+          private sales, initial offerings, and staking for mining rewards.
         </p>
       </div>
       <div ref="card3" class="bg-white rounded-2 card">
@@ -30,20 +30,18 @@
           Credit card top-up
         </p>
         <p class="text-gray mt-2">
-          You can use a credit card to recharge and cash out, making payment more free,
-          convenient and fast. Meet the
-          ways players need to recharge.
+          Earn crypto and cash by playing games with your Senet credit card. Look forward to the launch of
+          offline gaming ATMs for real-world gameplay and cash access.
         </p>
       </div>
       <div ref="card4" class="bg-white rounded-2 card">
         <img class="size-12" src="@img/icon-simulator.png" alt="Blockchain version of game simulator">
         <p class="text-5.5 font-500 mt-6">
-          Blockchain version of game simulator
+          Blockchain Gaming Engine
         </p>
         <p class="text-gray mt-2">
-          A game simulator for developing and researching blockchain games. More compatible
-          games, better services for
-          games, and enhanced user experience.
+          You will be able to enjoy all games on the platform without any need for downloads, earning as you
+          play. Furthermore, this system will be integrated into Senet's hardware facilities in the future.
         </p>
       </div>
     </div>

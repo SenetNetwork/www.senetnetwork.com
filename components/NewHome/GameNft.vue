@@ -2,11 +2,10 @@
   <section ref="panel" class="panel flex flex-col md-flex-row py-10 " md="py-30 h-80vh">
     <div ref="desc" class="px-8 flex-col justify-center" lg="pl-60">
       <h2 class="text-center" md="text-start">
-        Game NFT transaction
+        Game Equipment Trading
       </h2>
       <p class="text-main-dark mt-6 text-center" md="text-start">
-        The game party releases NFT digital collections. Players can freely trade and buy them, obtain limited
-        collection props or skins, and become unique in the game.
+        Dive into our high-liquidity equipment trading market for a unique NFT trading experience.
       </p>
     </div>
     <div ref="img" md="w-50% mt-0" class="shrink-0 flex items-center mt-8">

@@ -1,11 +1,11 @@
 <template>
   <section ref="panel" class="bg-#131313 text-white p-8" md="p-20">
     <h2 ref="title" class="family-medium text-center m-auto">
-      GAMEFI'S ONE-STOP SOLUTION
+      Game On, Any Chain
     </h2>
     <p ref="desc" class="pt-5  text-center m-auto" md="max-w-60%">
-      Covering seamless gaming experiences, asset trading (tokens, NFTs), and
-      supporting developers in launching assets in the market.
+      With Senet token, enjoy the cross-chain gaming ecosystem. Play freely across all blockchain gaming
+      worlds, building a new unified gaming experience. Discover limitless play today
     </p>
     <img
       ref="img"

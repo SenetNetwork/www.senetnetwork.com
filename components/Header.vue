@@ -1,36 +1,23 @@
 <template>
-  <header class="w-full overflow-hidden  md-px-25 sm-px-15 px-0 py-4  flex items-center gap-35">
-    <h1>
-      <NuxtLink to="/" class="w-43 h-15 shrink-0">
+  <header class="w-full overflow-hidden px-8  md-px-25 sm-px-15 px-0 py-4  flex items-center">
+    <NuxtLink to="/" class="shrink-0">
+      <h1 class="w-43">
         <IconsLogo class="size-full" color="black" />
-      </NuxtLink>
-    </h1>
-    <!--
-    <nav class="grow-1">
-      <ul class="flex items-center  gap-16">
-        <li>
-          <NuxtLink to="/"> Home </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/airdrop"> Airdrop </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/invite"> Invite friends </NuxtLink>
-        </li>
-      </ul>
-     </nav>
+      </h1>
+    </NuxtLink>
 
-    <button class="button-primary shrink-0" @click="login">Log In</button>
-  -->
+    <div class="grow-1 shrink-1" />
+    <NuxtLink v-if="$route.path === '/'" to="/download" class="shrink-0">
+      <button class="button-primary flex-center gap-3 !px-6">
+        <img class="w-5" src="@img/logo.png" alt="">
+        <span>
+          Download
+        </span>
+      </button>
+    </NuxtLink>
   </header>
 </template>
 
-<script setup lang='ts'>
-// const login = () => {
-//   console.log('login');
-
-// }
-</script>
 <style scoped>
 li a {
   /* cursor: pointer; */

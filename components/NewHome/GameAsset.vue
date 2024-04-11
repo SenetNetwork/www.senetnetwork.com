@@ -18,13 +18,12 @@
     </div>
     <div ref="desc" class="px-8 order-1 flex-col justify-center" md="order-2" lg="pr-60">
       <h2 class="text-center" md="text-start">
-        Game asset platform
+        Game Assets Management
       </h2>
       <p class="text-main-dark mt-6 text-center" md="text-start">
-        Provides a convenient and efficient asset management solution. On our platform, you can easily manage your
-        various game assets, including game currency, equipment, virtual props, etc. We provide a safe and convenient
-        trading platform where you can buy and sell various game assets, or exchange them with other players. Whether
-        you're an indie gamer or a professional game developer, we've got you covered
+        Experience comprehensive game token integration, seamless trading, and cross-chain functionality.
+        Enjoy a smoother-than-CEX experience backed by a full-chain DEX, and earn trading dividends on
+        the Senet platform.
       </p>
     </div>
   </section>

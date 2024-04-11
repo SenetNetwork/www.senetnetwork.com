@@ -18,11 +18,10 @@
     </div>
     <div ref="desc" class="px-8 order-1 flex-col justify-center" md="order-2" lg="pr-60">
       <h2 class="text-center" md="text-start">
-        Exclusive game mission system
+        Game Mission System
       </h2>
       <p class="text-main-dark mt-6 text-center" md="text-start">
-        The gaming platform releases various tasks to increase user stickiness, giving users a better gaming experience
-        and earning airdrops of points.
+        Embark on a multitude of time-sensitive missions, earn rewards, and truly embrace the 'Free to Earn' concept!
       </p>
     </div>
   </section>

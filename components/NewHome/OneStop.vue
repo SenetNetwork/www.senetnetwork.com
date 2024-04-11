@@ -1,18 +1,13 @@
 <template>
-  <section ref="panel" class="bg-#011828  text-white py-8" md="py-25">
+  <section id="OneStop" ref="panel" class="bg-#011828  text-white py-8" md="py-25">
     <div ref="bgRef" class="absolute bottom-30 left-0 w-50% h-30% bg rounded-full z-0" />
     <div class="relative z-1 px-8 py-20 flex-col justify-center items-center size-full" md="py-0">
       <h2 ref="title" class="family-medium text-center" md="text-start">
-        GAMEFI'S <span class="text-primary">ONE-STOP SOLUTION</span>
+        One-Stop GameFi Solution
       </h2>
-      <div ref="desc" class="text-background  mt-4 text-center" sm="text-start mt-10">
-        <p>
-          Covering seamless gaming experiences, asset trading (tokens, NFTs), and
-        </p>
-        <p>
-          supporting developers in launching assets in the market.
-        </p>
-      </div>
+      <p ref="desc" class="text-background  mt-4 text-center" sm="text-start mt-10">
+        Simplified Game Deployment, Rapid Game Release, Secure Game Asset Management.
+      </p>
       <img ref="img" class="" md="w-50% min-w-150 max-w-210" src="@img/OneStop.png" alt="desc">
     </div>
   </section>

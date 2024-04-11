@@ -10,7 +10,7 @@
     <NewHomeGameMission />
     <NewHomeComingSoon />
     <NewHomeSolution />
-    <NewHomeGameTradingMode />
+    <NewHomeGameTradingEvolution />
   </div>
 </template>
 <script lang="ts" setup>

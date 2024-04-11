@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/',
     head: {
-      title: 'Senet - The next generation of games',
+      title: 'Senet App - Best Choice for Exploring and Trading in Blockchain Games.',
       meta: [
         { charset: 'utf-8' },
         {

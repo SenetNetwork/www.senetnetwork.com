@@ -2,11 +2,10 @@
   <section ref="panel" class="panel flex flex-col md-flex-row py-10" md="py-30 h-80vh">
     <div ref="desc" class="px-8 flex-col justify-center" lg="pl-60">
       <h2 md="text-start" class="text-center">
-        Game asset trading platform
+        Game Explore Network
       </h2>
       <p class="text-main-dark mt-6 text-center" md="text-start">
-        Senet is a seamless, efficient, and user-friendly GameFi Exchange that enhances liquidity, player engagement,
-        and developer involvement in the Web3 Gaming Industry (2C).
+        Discover a vast array of games on the blockchain: Your vote decides which games get launched!
       </p>
     </div>
     <div ref="img" md="w-50% mt-0" class="shrink-0 flex items-center mt-8">
