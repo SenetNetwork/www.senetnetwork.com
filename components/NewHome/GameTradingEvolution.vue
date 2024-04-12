@@ -1,5 +1,5 @@
 <template>
-  <section class="flex-col py-8" md="py-10 h-80vh min-h-165 gap-10">
+  <section ref="panel" class="flex-col py-8" md="py-10 h-80vh min-h-165 gap-10">
     <h2 class="mx-auto text-center px-8" md="w-60%">
       <p>Evolution of Game Trading</p>
     </h2>
@@ -32,15 +32,11 @@
         </div>
       </div>
     </div>
-    <div ref="gridWrap" class="grow-1 hidden grid-wrap grid-cols-4 grid-rows-2 w-full items-center justify-items-center px-8" md="grid">
-      <img ref="evolution1" src="@img/evolution-1.png" alt="">
-      <img ref="evolution2" src="@img/evolution-2.png" alt="">
-      <img ref="evolution3" src="@img/evolution-3.png" alt="">
-      <img ref="evolution4" src="@img/evolution-4.png" alt="">
-      <img ref="evolution5" src="@img/evolution-5.png" alt="">
-      <img ref="evolution6" src="@img/evolution-6.png" alt="">
-      <img ref="evolution7" src="@img/evolution-7.png" alt="">
-      <img ref="evolution8" src="@img/evolution-8.png" alt="">
+    <div ref="gridWrap" class="grow-1 hidden grid-wrap grid-cols-2 grid-rows-2 w-full items-center justify-items-center px-8" md="grid">
+      <img ref="evolution2" :src="img2" alt="">
+      <img ref="evolution3" :src="img3" alt="">
+      <img ref="evolution1" :src="img1" alt="">
+      <img ref="evolution4" :src="img4" alt="">
     </div>
   </section>
 </template>
@@ -54,10 +50,8 @@ import img1 from '@img/evolution-1.png'
 import img2 from '@img/evolution-2.png'
 import img3 from '@img/evolution-3.png'
 import img4 from '@img/evolution-4.png'
-import img5 from '@img/evolution-5.png'
-import img6 from '@img/evolution-6.png'
 
-const imgs = [img1, img2, img3, img4, img5, img6]
+const imgs = [img1, img2, img3, img4]
 const swiperOpts = {
   modules: [Pagination, Navigation],
   slidesPerView: 1,
@@ -81,28 +75,23 @@ const onSlideChange = (e: any) => {
   showNextButton.value = e.activeIndex < imgs.length - 1
 }
 const { $gsap } = useNuxtApp()
+
+const panel = ref()
 const gridWrap = ref()
 const evolution1 = ref()
 const evolution2 = ref()
 const evolution3 = ref()
 const evolution4 = ref()
-const evolution5 = ref()
-const evolution6 = ref()
-const evolution7 = ref()
-const evolution8 = ref()
-
-onMounted(() => {
-  if (!gridWrap.value) { return }
-  const style = getComputedStyle(gridWrap.value)
-  if (style.display === 'none') {
-    return
-  }
-  const tl = $gsap.timeline()
+let timer:NodeJS.Timeout|null = null
+let tl :gsap.core.Timeline|null = null
+const startAnimation = () => {
+  tl = $gsap.timeline()
   tl.eventCallback('onComplete', () => {
-    setTimeout(() => {
-      tl.restart()
+    timer = setTimeout(() => {
+      tl!.restart()
     }, 5000)
   })
+
   const options = {
     opacity: 0,
     ease: 'power1.in',
@@ -113,20 +102,22 @@ onMounted(() => {
     .from(evolution2.value, options)
     .from(evolution3.value, options)
     .from(evolution4.value, options)
-    .from(evolution5.value, options)
-    .from(evolution6.value, options)
-    .from(evolution7.value, options)
-    .from(evolution8.value, options)
+}
+const stopAnimation = () => {
+  timer && clearTimeout(timer)
+  tl?.clear()
+  tl = null
+}
+const { stop } = useIntersectionObserver(gridWrap, ([{ isIntersecting }]) => {
+  isIntersecting ? startAnimation() : stopAnimation()
+})
+onUnmounted(() => {
+  stop()
+  stopAnimation()
 })
 </script>
 <style scoped>
 .grid-wrap img{
-  @apply w-80% lg-w-50%;
-}
-.grid-wrap img:nth-of-type(7){
-  @apply w-90% lg-w-60%;
-}
-.grid-wrap img:nth-of-type(8){
-  @apply w-90% lg-w-60%;
+  @apply w-80% lg-w-60%;
 }
 </style>
