@@ -20,7 +20,7 @@
       <h2 class="text-center" md="text-start">
         Game Assets Management
       </h2>
-      <p class="text-main-dark mt-6 text-center" md="text-start">
+      <p class="text-main-dark mt-6 text-center desc" md="text-start">
         Experience comprehensive game token integration, seamless trading, and cross-chain functionality.
         Enjoy a smoother-than-CEX experience backed by a full-chain DEX, and earn trading dividends on
         the Senet platform.

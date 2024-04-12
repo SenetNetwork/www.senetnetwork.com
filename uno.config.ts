@@ -25,7 +25,7 @@ export default defineConfig({
       'flex-col': 'flex flex-col',
       'base-max-width': 'max-w-87.5rem',
       'overflow-ellipsis': 'overflow-hidden text-ellipsis text-nowrap',
-      'button-base': 'px-10 py-3 rounded-1',
+      'button-base': 'px-10 py-3 rounded-4',
       'button-primary': 'bg-#DAFD60 hover-bg-opacity-60 active-bg-opacity-80 text-main button-base',
       'button-black': 'bg-black hover-bg-opacity-60 active-bg-opacity-80 text-primary button-base',
       'family-regular': 'font-[var(--font-regular)]',

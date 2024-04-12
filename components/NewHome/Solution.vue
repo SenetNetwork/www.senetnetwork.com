@@ -3,7 +3,7 @@
     <h2 ref="title" class="family-medium text-center m-auto">
       Game On, Any Chain
     </h2>
-    <p ref="desc" class="pt-5  text-center m-auto" md="max-w-60%">
+    <p ref="desc" class="pt-5 desc text-center m-auto" md="max-w-60%">
       With Senet token, enjoy the cross-chain gaming ecosystem. Play freely across all blockchain gaming
       worlds, building a new unified gaming experience. Discover limitless play today
     </p>

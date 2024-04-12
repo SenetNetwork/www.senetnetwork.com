@@ -5,7 +5,7 @@
       <h2 ref="title" class="family-medium text-center" md="text-start">
         One-Stop GameFi Solution
       </h2>
-      <p ref="desc" class="text-background  mt-4 text-center" sm="text-start mt-10">
+      <p ref="desc" class="text-background  mt-4 text-center desc" sm="text-start mt-10">
         Simplified Game Deployment, Rapid Game Release, Secure Game Asset Management.
       </p>
       <img ref="img" class="" md="w-50% min-w-150 max-w-210" src="@img/OneStop.png" alt="desc">

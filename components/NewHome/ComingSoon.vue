@@ -116,6 +116,6 @@ onMounted(() => {
   z-index: -1;
 }
 .card{
-  @apply py-6 px-8;
+  @apply py-6 px-8 lg-py-8;
 }
 </style>

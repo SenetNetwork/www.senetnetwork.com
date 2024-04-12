@@ -20,7 +20,7 @@
       <h2 class="text-center" md="text-start">
         Game Mission System
       </h2>
-      <p class="text-main-dark mt-6 text-center" md="text-start">
+      <p class="text-main-dark mt-6 text-center desc" md="text-start">
         Embark on a multitude of time-sensitive missions, earn rewards, and truly embrace the 'Free to Earn' concept!
       </p>
     </div>

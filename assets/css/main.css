@@ -68,3 +68,6 @@ section {
 h2 {
   @apply family-semi-bold  lg-text-15 lg-line-height-15 md-text-12 md-line-height-12 sm-text-10 text-8;
 }
+.desc {
+  @apply md-text-6 text-4;
+}

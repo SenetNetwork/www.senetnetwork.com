@@ -4,7 +4,7 @@
       <h2 class="text-center" md="text-start">
         Game Equipment Trading
       </h2>
-      <p class="text-main-dark mt-6 text-center" md="text-start">
+      <p class="text-main-dark mt-6 text-center desc" md="text-start">
         Dive into our high-liquidity equipment trading market for a unique NFT trading experience.
       </p>
     </div>

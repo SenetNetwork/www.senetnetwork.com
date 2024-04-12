@@ -4,7 +4,7 @@
       <h2 md="text-start" class="text-center">
         Game Explore Network
       </h2>
-      <p class="text-main-dark mt-6 text-center" md="text-start">
+      <p class="text-main-dark mt-6 text-center desc" md="text-start">
         Discover a vast array of games on the blockchain: Your vote decides which games get launched!
       </p>
     </div>

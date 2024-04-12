@@ -4,7 +4,7 @@
       <h2 class="text-center" md="text-start">
         Gamefi Exchange App & Wallet
       </h2>
-      <p class="color-gray mt-4 text-center" md="text-start">
+      <p class="color-gray mt-4 text-center desc" md="text-start">
         Easy, Safe, and Fun.
       </p>
       <div class="flex justify-center mt-12" md="justify-start">

@@ -9,10 +9,7 @@
     <div class="grow-1 shrink-1" />
     <NuxtLink v-if="$route.path === '/'" to="/download" class="shrink-0">
       <button class="button-primary flex-center gap-3 !px-6">
-        <img class="w-5" src="@img/logo.png" alt="">
-        <span>
-          Download
-        </span>
+        Download
       </button>
     </NuxtLink>
   </header>
